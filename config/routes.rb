@@ -1,4 +1,26 @@
 Rails.application.routes.draw do
+  resources :users, only: [:new, :create]
+  resources :groups, except: :index do
+    resources :posts, only: :index
+    resources :snippets, only: :index
+    resources :users, only: [:index, :show] do
+      resources :posts do
+        resources :comments, except: [:index, :show]
+      end
+      resources :snippets do
+        resources :comments, except: [:index, :show]
+      end
+    end
+  end
+
+  get '/profile' => 'users#profile'
+  get '/profile/edit' => 'users#edit', as: :edit_user
+  patch '/profile' => 'users#update', as: :user
+  put '/profile' => 'users#update'
+  delete '/profile' => 'users#delete'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
