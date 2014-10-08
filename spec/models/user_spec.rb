@@ -42,4 +42,9 @@ describe User do
   it "should have many comments" do
     expect(user).to have_many :comments
   end
+
+  it "should not store plain text password" do
+    expect(user.password.to_s).to eq user.password_digest.to_s
+  end
+
 end
