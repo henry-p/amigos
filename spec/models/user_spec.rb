@@ -18,4 +18,28 @@ describe User do
   it "should have a single profile picture" do
     expect(user).to have_one :image
   end
+
+  it "should have a membership to a group" do
+    expect(user).to have_many :memberships
+  end
+
+  it "should be jefe of many groups" do
+    expect(user).to have_many :managed_groups
+  end
+
+  it "should be a regular member of many groups" do
+    expect(user).to have_many :groups
+  end
+
+  it "should have many posts" do
+    expect(user).to have_many :posts
+  end
+
+  it "should have many snippets" do
+    expect(user).to have_many :snippets
+  end
+
+  it "should have many comments" do
+    expect(user).to have_many :comments
+  end
 end
