@@ -56,10 +56,6 @@
 <row name="current_location" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="image_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="images" row="id" />
-</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -91,10 +87,6 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
 </row>
-<row name="image_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="images" row="id" />
-</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -107,6 +99,14 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="thumbnail_path" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="imageable_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+<relation table="groups" row="id" />
+</row>
+<row name="imageable_type" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
@@ -158,7 +158,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="68" y="308" name="snippets">
+<table x="70" y="344" name="snippets">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -168,6 +168,10 @@
 <row name="creator_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="group_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="groups" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
