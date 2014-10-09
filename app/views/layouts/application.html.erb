@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Amigos</title>
-    <link type="text/css" rel="stylesheet" href="normalize.css" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -25,6 +24,8 @@
         <% end %>
       </nav>
     </header>
-    <%= yield %>
+    <div id="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

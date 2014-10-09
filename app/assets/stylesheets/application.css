@@ -57,6 +57,7 @@ header button:active {
   margin-left: 10px;
   color: white; 
 }
-body {
-  margin-top: 150px;
+#container {
+  margin-top: 75px;
+  margin-left: 25px;
 }
