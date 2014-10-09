@@ -2985,3 +2985,650 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-09 12:21:01 -0500
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 12:21:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (18.7ms)[0m  [1mINSERT INTO "users" ("created_at", "current_location", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:00.556148"], ["current_location", "Chicago, IL"], ["email", "isaac@gmail.com"], ["first_name", "Isaac"], ["last_name", "Noda"], ["password_digest", "$2a$10$jqr6EXXAAQTyP7EYj2RHueI7gHW4I4pIzdXDklBbQZo.SNRJAzYYC"], ["updated_at", "2014-10-09 21:35:00.556148"]]
+  [1m[35m (4.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "current_location", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", "2014-10-09 21:35:00.669523"], ["current_location", "Chicago, IL"], ["email", "henry@gmail.com"], ["first_name", "Henry"], ["last_name", "Perschk"], ["password_digest", "$2a$10$gcwW5EUP8ZRf1ttzNRn8uOiGybyphAlBkxf.xLsk0QBxzq/5nyZ1i"], ["updated_at", "2014-10-09 21:35:00.669523"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "current_location", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:00.744688"], ["current_location", "Bahamas"], ["email", "torey@gmail.com"], ["first_name", "Torey"], ["last_name", "Hickman"], ["password_digest", "$2a$10$e3X7XLJG21TgECnaaqx8EeIprEP4p81uuYGNSIN/qjCNaNBNVRR3e"], ["updated_at", "2014-10-09 21:35:00.744688"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "current_location", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", "2014-10-09 21:35:00.820841"], ["current_location", "Kalispell, MT"], ["email", "joe@gmail.com"], ["first_name", "Joe"], ["last_name", "Timmer"], ["password_digest", "$2a$10$HOx8T11u/ZYrhdw0xIw.T.X/4c1rH0tGsePwMVUZffRU0QGf6kgWi"], ["updated_at", "2014-10-09 21:35:00.820841"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (18.3ms)[0m  [1mINSERT INTO "groups" ("created_at", "jefe_id", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:00.836704"], ["jefe_id", 2], ["name", "DBC4eva"], ["updated_at", "2014-10-09 21:35:00.836704"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (19.0ms)[0m  INSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-09 21:35:00.864076"], ["group_id", 1], ["member_id", 1], ["updated_at", "2014-10-09 21:35:00.864076"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:00.885457"], ["group_id", 1], ["member_id", 2], ["updated_at", "2014-10-09 21:35:00.885457"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-09 21:35:00.886995"], ["group_id", 1], ["member_id", 3], ["updated_at", "2014-10-09 21:35:00.886995"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:00.888462"], ["group_id", 1], ["member_id", 4], ["updated_at", "2014-10-09 21:35:00.888462"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "posts" ("content", "created_at", "creator_id", "group_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Why should know you're doing whatever,\nThat you I did before,\nAnd the world small world,\nYour games you're happy wherever you more than that means.\n\nIt's really over- please don't hear your eyes I,\nI will stay on the sun,\nI'm doing fine,\nI'm so you ever say is.\n\n[chorus]\nYou know what we were,\nThe words in the line in time.\nYou know what we were,\nThe words in the line in time."], ["created_at", "2014-10-09 21:35:00.898358"], ["creator_id", 3], ["group_id", 1], ["title", "On Putting Dogs to Sleep"], ["updated_at", "2014-10-09 21:35:00.898358"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "snippets" ("content", "created_at", "creator_id", "group_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Cause im already in mine / Ain't about my heart is everything is done / I believe in the credits / It's the 7 things flowing up."], ["created_at", "2014-10-09 21:35:00.909542"], ["creator_id", 1], ["group_id", 1], ["updated_at", "2014-10-09 21:35:00.909542"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "snippets" ("content", "created_at", "creator_id", "group_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "Li-li / I can't be tamed you / I'm lazy / And I look somewhere else falls into this kicking."], ["created_at", "2014-10-09 21:35:00.912841"], ["creator_id", 4], ["group_id", 1], ["updated_at", "2014-10-09 21:35:00.912841"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "creator_id", "group_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "I care of something stops me see you lose,\nDrive my brain ma,\nBoom de clap de clap de,\nI care of the world.\n\nDon't know your hands up,\nWhen you love me back with you there,\nThat you up the story's getting old,\nSo tragic.\n\n[chorus]\nThis kicking and yes dear we're gonna,\n'cause what we up you alone.\nThis kicking and yes dear we're gonna,\n'cause what we up you alone."], ["created_at", "2014-10-09 21:35:00.914388"], ["creator_id", 3], ["group_id", 1], ["title", "Some More of My Poetry"], ["updated_at", "2014-10-09 21:35:00.914388"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (19.0ms)[0m  INSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["commentable_id", 1], ["commentable_type", "Post"], ["content", "Wow Torey you're really good at poetry"], ["created_at", "2014-10-09 21:35:00.923347"], ["creator_id", 2], ["updated_at", "2014-10-09 21:35:00.923347"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["commentable_id", 1], ["commentable_type", "Post"], ["content", "This vacation is doing you some good!"], ["created_at", "2014-10-09 21:35:00.944705"], ["creator_id", 1], ["updated_at", "2014-10-09 21:35:00.944705"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["commentable_id", 1], ["commentable_type", "Snippet"], ["content", "lol"], ["created_at", "2014-10-09 21:35:00.946436"], ["creator_id", 3], ["updated_at", "2014-10-09 21:35:00.946436"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["commentable_id", 2], ["commentable_type", "Post"], ["content", "Wait is this a Miley song?"], ["created_at", "2014-10-09 21:35:00.947897"], ["creator_id", 4], ["updated_at", "2014-10-09 21:35:00.947897"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20141008155410)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (27.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password_digest" character varying(255), "first_name" character varying(255), "last_name" character varying(255), "current_location" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008155410"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateImages (20141008155700)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "images" ("id" serial primary key, "path" character varying(255), "imageable_id" integer, "imageable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008155700"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMemberships (20141008185018)
+  [1m[35m (5.5ms)[0m  BEGIN
+  [1m[36m (8.0ms)[0m  [1mCREATE TABLE "memberships" ("id" serial primary key, "member_id" integer, "group_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008185018"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGroups (20141008185552)
+  [1m[35m (5.8ms)[0m  BEGIN
+  [1m[36m (9.9ms)[0m  [1mCREATE TABLE "groups" ("id" serial primary key, "name" character varying(255), "jefe_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008185552"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePosts (20141008191832)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.6ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "group_id" integer, "creator_id" integer, "title" character varying(255), "content" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008191832"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSnippets (20141008192109)
+  [1m[35m (5.8ms)[0m  BEGIN
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "snippets" ("id" serial primary key, "content" character varying(255), "creator_id" integer, "group_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008192109"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateComments (20141008192434)
+  [1m[35m (5.6ms)[0m  BEGIN
+  [1m[36m (14.4ms)[0m  [1mCREATE TABLE "comments" ("id" serial primary key, "content" text, "creator_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008192434"]]
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "current_location", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:12.491890"], ["current_location", "Chicago, IL"], ["email", "isaac@gmail.com"], ["first_name", "Isaac"], ["last_name", "Noda"], ["password_digest", "$2a$10$xuRCfDelYjXKKlKrJsvVruHP.CZsE3h0FkZpsl6yYsUFFihggf4eG"], ["updated_at", "2014-10-09 21:35:12.491890"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "current_location", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", "2014-10-09 21:35:12.564034"], ["current_location", "Chicago, IL"], ["email", "henry@gmail.com"], ["first_name", "Henry"], ["last_name", "Perschk"], ["password_digest", "$2a$10$aogOXZCCzjwcZo2631OaKurF8mItsNXtwYCiTcRi4m4mkwZt3enli"], ["updated_at", "2014-10-09 21:35:12.564034"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "current_location", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:12.638288"], ["current_location", "Bahamas"], ["email", "torey@gmail.com"], ["first_name", "Torey"], ["last_name", "Hickman"], ["password_digest", "$2a$10$nlJZOmoAnMeNGZsm50xgsOhXtSJfM.ieCy7WjvwMJXrEU4H2YzmKy"], ["updated_at", "2014-10-09 21:35:12.638288"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "current_location", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", "2014-10-09 21:35:12.711529"], ["current_location", "Kalispell, MT"], ["email", "joe@gmail.com"], ["first_name", "Joe"], ["last_name", "Timmer"], ["password_digest", "$2a$10$LszTnihxrHMhgf3UQRdG9uzHVqPsqfvA9ItN3Rdkvc8qWGUgo3WUa"], ["updated_at", "2014-10-09 21:35:12.711529"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "groups" ("created_at", "jefe_id", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:12.723116"], ["jefe_id", 2], ["name", "DBC4eva"], ["updated_at", "2014-10-09 21:35:12.723116"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-09 21:35:12.731182"], ["group_id", 1], ["member_id", 1], ["updated_at", "2014-10-09 21:35:12.731182"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:12.733374"], ["group_id", 1], ["member_id", 2], ["updated_at", "2014-10-09 21:35:12.733374"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-09 21:35:12.734727"], ["group_id", 1], ["member_id", 3], ["updated_at", "2014-10-09 21:35:12.734727"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-09 21:35:12.736027"], ["group_id", 1], ["member_id", 4], ["updated_at", "2014-10-09 21:35:12.736027"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("content", "created_at", "creator_id", "group_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Why should know you're doing whatever,\nThat you I did before,\nAnd the world small world,\nYour games you're happy wherever you more than that means.\n\nIt's really over- please don't hear your eyes I,\nI will stay on the sun,\nI'm doing fine,\nI'm so you ever say is.\n\n[chorus]\nYou know what we were,\nThe words in the line in time.\nYou know what we were,\nThe words in the line in time."], ["created_at", "2014-10-09 21:35:12.747783"], ["creator_id", 3], ["group_id", 1], ["title", "On Putting Dogs to Sleep"], ["updated_at", "2014-10-09 21:35:12.747783"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "snippets" ("content", "created_at", "creator_id", "group_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Cause im already in mine / Ain't about my heart is everything is done / I believe in the credits / It's the 7 things flowing up."], ["created_at", "2014-10-09 21:35:12.758974"], ["creator_id", 1], ["group_id", 1], ["updated_at", "2014-10-09 21:35:12.758974"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "snippets" ("content", "created_at", "creator_id", "group_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "Li-li / I can't be tamed you / I'm lazy / And I look somewhere else falls into this kicking."], ["created_at", "2014-10-09 21:35:12.761235"], ["creator_id", 4], ["group_id", 1], ["updated_at", "2014-10-09 21:35:12.761235"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "creator_id", "group_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "I care of something stops me see you lose,\nDrive my brain ma,\nBoom de clap de clap de,\nI care of the world.\n\nDon't know your hands up,\nWhen you love me back with you there,\nThat you up the story's getting old,\nSo tragic.\n\n[chorus]\nThis kicking and yes dear we're gonna,\n'cause what we up you alone.\nThis kicking and yes dear we're gonna,\n'cause what we up you alone."], ["created_at", "2014-10-09 21:35:12.762949"], ["creator_id", 3], ["group_id", 1], ["title", "Some More of My Poetry"], ["updated_at", "2014-10-09 21:35:12.762949"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["commentable_id", 1], ["commentable_type", "Post"], ["content", "Wow Torey you're really good at poetry"], ["created_at", "2014-10-09 21:35:12.771633"], ["creator_id", 2], ["updated_at", "2014-10-09 21:35:12.771633"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["commentable_id", 1], ["commentable_type", "Post"], ["content", "This vacation is doing you some good!"], ["created_at", "2014-10-09 21:35:12.774228"], ["creator_id", 1], ["updated_at", "2014-10-09 21:35:12.774228"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["commentable_id", 1], ["commentable_type", "Snippet"], ["content", "lol"], ["created_at", "2014-10-09 21:35:12.776188"], ["creator_id", 3], ["updated_at", "2014-10-09 21:35:12.776188"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["commentable_id", 2], ["commentable_type", "Post"], ["content", "Wait is this a Miley song?"], ["created_at", "2014-10-09 21:35:12.777573"], ["creator_id", 4], ["updated_at", "2014-10-09 21:35:12.777573"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/groups/1/users/2/posts/new" for 127.0.0.1 at 2014-10-09 16:35:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Parameters: {"group_id"=>"1", "user_id"=>"2"}
+  Rendered posts/new.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 263ms (Views: 251.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:24 -0500
+
+
+Started GET "/groups/1/users/2/" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"group_id"=>"1", "id"=>"2"}
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 162ms (Views: 161.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:44 -0500
+
+
+Started GET "/groups/1/users/2" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"group_id"=>"1", "id"=>"2"}
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 117ms (Views: 115.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:48 -0500
+
+
+Started GET "/groups/1/users/2/posts/new" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"group_id"=>"1", "user_id"=>"2"}
+  Rendered posts/new.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 158ms (Views: 157.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-09 16:35:57 -0500
+
+
+Started GET "/groups/1/users/2/posts/new" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"group_id"=>"1", "user_id"=>"2"}
+  Rendered posts/new.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 119ms (Views: 118.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/assets/home_background.jpg" for 127.0.0.1 at 2014-10-09 16:36:01 -0500
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2014-10-09 16:40:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 120ms (Views: 118.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-09 16:40:24 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-09 16:40:24 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-09 16:40:24 -0500
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."member_id" = $1[0m  [["member_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 217ms (Views: 200.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 16:45:16 -0500
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2014-10-09 16:47:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."member_id" = $1  [["member_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (62.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 194ms (Views: 179.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 16:47:09 -0500
