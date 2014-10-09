@@ -29,4 +29,4 @@ class User < ActiveRecord::Base
   #   return user if user && (user.password == password)
   #   nil
   # end
-endgit 
+end
