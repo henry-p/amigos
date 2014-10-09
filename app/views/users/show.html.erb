@@ -1,1 +1,19 @@
-show.html.erb
+<!-- user GET  /profile/:id(.:format)  users#show -->
+
+ʕ •ᴥ•ʔ
+
+<h2><%= @user.first_name %> <%= @user.last_name %></h2>	
+<ul>
+	<li><%= @user.email %></li>
+	<li><%= @user.current_location %></li>
+</ul>
+
+<button><%= link_to 'Edit Profile', edit_user_url(@user) %></button>
+
+<h3>Memberships</h3>
+<ul>
+	<% @user.groups.each do |group| %>
+	<li><%= link_to group.name %> - <strong>Jefe:</strong> <%= group.jefe.first_name %> <%= group.jefe.last_name %></li>
+	<br>
+<% end %>
+</ul>
