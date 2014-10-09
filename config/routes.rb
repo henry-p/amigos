@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'users#index'
+  root to: 'home#index'
 
   concern :commentable do
     resources :comments, except: [:index, :show]

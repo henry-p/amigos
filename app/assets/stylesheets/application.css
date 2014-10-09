@@ -13,9 +13,51 @@
 *= require_tree .
 *= require_self
 */
-
 @import url("http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic");
-
-* { 
-    font-family: "Lora"
+* {
+  font-family: "Lora"
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(128,200,181,0.8);;
+}
+header nav {
+  float: right;
+} 
+header button {
+  outline: none;
+  width: 100px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #4DB788;
+  border-radius: 10px;
+  border: 1px solid #80C8B5;
+}
+header button a {
+  color: #ffffff;
+  font-family: arial;
+  font-size: 17px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+header button:hover {
+  background-color:#332F3E;
+}
+header button:active {
+  box-shadow: 0 0 10px #888888;
+}
+#header_text {
+  text-shadow: 0px 1px 0px lightgray;
+  top: 5px;
+  font-size: 2.5em;
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  color: white; 
+}
+#container {
+  margin-top: 75px;
+  margin-left: 25px;
 }

@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Amigos</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Amigos</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <div id="header_text">Friendzone</div>
+      <nav>
+        <% if logged_in? %>
+        <button>
+        <a href="">Sign Out</a>
+        </button>
+        <% else %>
+        <button>
+        <a href="">Sign Up</a>
+        </button>
+        <button>
+        <a href="">Sign In</a>
+        </button>
+        <% end %>
+      </nav>
+    </header>
+    <div id="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>
