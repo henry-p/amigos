@@ -1,11 +1,11 @@
 <div class="post">
 <h3><%=post.title%></h3>
-<h5>by: <%=User.find_by_id(post.creator_id).first_name%>  <%=User.find_by_id(post.creator_id).last_name%></h5>
+<h5><%=User.find_by_id(post.creator_id).first_name%>  <%=User.find_by_id(post.creator_id).last_name%> - <%= post.created_at.strftime("%B, %d, %Y") %></h5>
 <p><%=post.content%></p>
 <% unless post.comments.empty? %>
 <% post.comments.each do |comment|	%>
 <div class="comment">
-	<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%></h5>
+	<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
 	<p><%= comment.content %></p>
 </div>
 <% end %>
