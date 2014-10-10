@@ -1705,3 +1705,137 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 21:14:05
 
 
 Started GET "/assets/home_background.jpg" for 127.0.0.1 at 2014-10-09 21:14:05 -0500
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (13.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20141008155410)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (25.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "current_location" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008155410"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateImages (20141008155700)
+  [1m[35m (5.9ms)[0m  BEGIN
+  [1m[36m (14.1ms)[0m  [1mCREATE TABLE "images" ("id" serial primary key, "path" character varying(255), "imageable_id" integer, "imageable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008155700"]]
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMemberships (20141008185018)
+  [1m[35m (6.1ms)[0m  BEGIN
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "memberships" ("id" serial primary key, "member_id" integer, "group_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008185018"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGroups (20141008185552)
+  [1m[35m (5.9ms)[0m  BEGIN
+  [1m[36m (7.8ms)[0m  [1mCREATE TABLE "groups" ("id" serial primary key, "name" character varying(255), "jefe_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008185552"]]
+  [1m[36m (6.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePosts (20141008191832)
+  [1m[35m (5.5ms)[0m  BEGIN
+  [1m[36m (14.2ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "group_id" integer, "creator_id" integer, "title" character varying(255), "content" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008191832"]]
+  [1m[36m (5.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSnippets (20141008192109)
+  [1m[35m (6.1ms)[0m  BEGIN
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "snippets" ("id" serial primary key, "content" character varying(255), "creator_id" integer, "group_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008192109"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateComments (20141008192434)
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36m (14.3ms)[0m  [1mCREATE TABLE "comments" ("id" serial primary key, "content" text, "creator_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141008192434"]]
+  [1m[36m (5.1ms)[0m  [1mCOMMIT[0m
+Migrating to AddDeviseToUsers (20141009223047)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "email" character varying(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (2.7ms)[0m  ALTER TABLE "users" ADD COLUMN "encrypted_password" character varying(255) DEFAULT '' NOT NULL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "reset_password_token" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD COLUMN "reset_password_sent_at" timestamp
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "remember_created_at" timestamp[0m
+  [1m[35m (2.5ms)[0m  ALTER TABLE "users" ADD COLUMN "sign_in_count" integer DEFAULT 0 NOT NULL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "current_sign_in_at" timestamp[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD COLUMN "last_sign_in_at" timestamp
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "current_sign_in_ip" inet[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD COLUMN "last_sign_in_ip" inet
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141009223047"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'isaac@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (18.2ms)[0m  INSERT INTO "users" ("created_at", "current_location", "email", "encrypted_password", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", "2014-10-10 19:40:51.434117"], ["current_location", "Chicago, IL"], ["email", "isaac@gmail.com"], ["encrypted_password", "$2a$10$fNQza8xy6WJo2f2hjigdX.jpsxj.qqD2Cy8DoKII1HHyZlAGvo8H6"], ["first_name", "Isaac"], ["last_name", "Node.js"], ["updated_at", "2014-10-10 19:40:51.434117"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'henry@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "current_location", "email", "encrypted_password", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", "2014-10-10 19:40:51.536931"], ["current_location", "Chicago, IL"], ["email", "henry@gmail.com"], ["encrypted_password", "$2a$10$pXakUJwYC7Frv8mnEYqVjew8oVOco9IUsDz1TZNBt07EjBC248n3m"], ["first_name", "Henry"], ["last_name", "Perschk"], ["updated_at", "2014-10-10 19:40:51.536931"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'torey@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("created_at", "current_location", "email", "encrypted_password", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", "2014-10-10 19:40:51.614605"], ["current_location", "Bahamas"], ["email", "torey@gmail.com"], ["encrypted_password", "$2a$10$vnEKH.x8aQmx6xnEC9kSZ.oVs9cIVedbhkbTz2I6OpuQYJrysEo0i"], ["first_name", "Torey"], ["last_name", "Hickman"], ["updated_at", "2014-10-10 19:40:51.614605"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'joe@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "current_location", "email", "encrypted_password", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", "2014-10-10 19:40:51.697130"], ["current_location", "Kalispell, MT"], ["email", "joe@gmail.com"], ["encrypted_password", "$2a$10$ZWaC1/Fn7h9QvQnxf9disumK.EbyPm5IXgXsV7R.XdjUbvwwf.GXa"], ["first_name", "Joe"], ["last_name", "Timmer"], ["updated_at", "2014-10-10 19:40:51.697130"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "groups" ("created_at", "jefe_id", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-10 19:40:51.711778"], ["jefe_id", 2], ["name", "DBC4eva"], ["updated_at", "2014-10-10 19:40:51.711778"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  INSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-10 19:40:51.733369"], ["group_id", 1], ["member_id", 1], ["updated_at", "2014-10-10 19:40:51.733369"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-10 19:40:51.747550"], ["group_id", 1], ["member_id", 2], ["updated_at", "2014-10-10 19:40:51.747550"]]
+  [1m[35m (5.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-10 19:40:51.754211"], ["group_id", 1], ["member_id", 3], ["updated_at", "2014-10-10 19:40:51.754211"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "memberships" ("created_at", "group_id", "member_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-10 19:40:51.755852"], ["group_id", 1], ["member_id", 4], ["updated_at", "2014-10-10 19:40:51.755852"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  INSERT INTO "posts" ("content", "created_at", "creator_id", "group_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Why should know you're doing whatever,\nThat you I did before,\nAnd the world small world,\nYour games you're happy wherever you more than that means.\n\nIt's really over- please don't hear your eyes I,\nI will stay on the sun,\nI'm doing fine,\nI'm so you ever say is.\n\n[chorus]\nYou know what we were,\nThe words in the line in time.\nYou know what we were,\nThe words in the line in time."], ["created_at", "2014-10-10 19:40:51.767545"], ["creator_id", 3], ["group_id", 1], ["title", "On Putting Dogs to Sleep"], ["updated_at", "2014-10-10 19:40:51.767545"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.7ms)[0m  [1mINSERT INTO "snippets" ("content", "created_at", "creator_id", "group_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Cause im already in mine / Ain't about my heart is everything is done / I believe in the credits / It's the 7 things flowing up."], ["created_at", "2014-10-10 19:40:51.791779"], ["creator_id", 1], ["group_id", 1], ["updated_at", "2014-10-10 19:40:51.791779"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "snippets" ("content", "created_at", "creator_id", "group_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["content", "Li-li / I can't be tamed you / I'm lazy / And I look somewhere else falls into this kicking."], ["created_at", "2014-10-10 19:40:51.808738"], ["creator_id", 4], ["group_id", 1], ["updated_at", "2014-10-10 19:40:51.808738"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "creator_id", "group_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "I care of something stops me see you lose,\nDrive my brain ma,\nBoom de clap de clap de,\nI care of the world.\n\nDon't know your hands up,\nWhen you love me back with you there,\nThat you up the story's getting old,\nSo tragic.\n\n[chorus]\nThis kicking and yes dear we're gonna,\n'cause what we up you alone.\nThis kicking and yes dear we're gonna,\n'cause what we up you alone."], ["created_at", "2014-10-10 19:40:51.811759"], ["creator_id", 3], ["group_id", 1], ["title", "Some More of My Poetry"], ["updated_at", "2014-10-10 19:40:51.811759"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  INSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["commentable_id", 1], ["commentable_type", "Post"], ["content", "Wow Torey you're really good at poetry"], ["created_at", "2014-10-10 19:40:51.824384"], ["creator_id", 2], ["updated_at", "2014-10-10 19:40:51.824384"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["commentable_id", 1], ["commentable_type", "Post"], ["content", "This vacation is doing you some good!"], ["created_at", "2014-10-10 19:40:51.839975"], ["creator_id", 1], ["updated_at", "2014-10-10 19:40:51.839975"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["commentable_id", 1], ["commentable_type", "Snippet"], ["content", "lol"], ["created_at", "2014-10-10 19:40:51.841659"], ["creator_id", 3], ["updated_at", "2014-10-10 19:40:51.841659"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "creator_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["commentable_id", 2], ["commentable_type", "Post"], ["content", "Wait is this a Miley song?"], ["created_at", "2014-10-10 19:40:51.843164"], ["creator_id", 4], ["updated_at", "2014-10-10 19:40:51.843164"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (119.1ms)[0m  [1mDROP DATABASE IF EXISTS "amigos_test"[0m
+  [1m[35m (239.3ms)[0m  CREATE DATABASE "amigos_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.3ms)[0m  CREATE TABLE "comments" ("id" serial primary key, "content" text, "creator_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "groups" ("id" serial primary key, "name" character varying(255), "jefe_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (3.1ms)[0m  CREATE TABLE "images" ("id" serial primary key, "path" character varying(255), "imageable_id" integer, "imageable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "memberships" ("id" serial primary key, "member_id" integer, "group_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "group_id" integer, "creator_id" integer, "title" character varying(255), "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "snippets" ("id" serial primary key, "content" character varying(255), "creator_id" integer, "group_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (4.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "current_location" character varying(255), "created_at" timestamp, "updated_at" timestamp, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141009223047')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141008155410')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141008155700')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141008185018')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141008185552')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141008191832')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141008192109')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141008192434')[0m

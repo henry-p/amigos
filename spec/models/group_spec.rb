@@ -1,14 +1,14 @@
 require 'spec_helper'
 
 describe Group do
-  let(:group) { Group.create!(name: "Our cool group!", jefe_id: 1) }
-  let(:user) {User.create!(email: "test@test.com", password: "secure", first_name: "John", last_name: "Doe", current_location: "Chicago, IL")}
+  let(:group) { Group.create!(name: "Our cool group!") }
+  let(:user) {User.create!(email: "test@test.com", password: "12345678", first_name: "John", last_name: "Doe", current_location: "Chicago, IL")}
 
 
   it "should have name and jefe" do
+    group.jefe = user
     expect(group.name).to eq "Our cool group!"
-    expect(group.jefe.first_name).to eq "John"
-    expect(group.jefe_id).to eq user.id
+    expect(group.jefe).to eq user
   end
 
   it "should be managed by a 'jefe'" do

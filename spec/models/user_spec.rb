@@ -1,16 +1,26 @@
 require 'spec_helper'
 
 describe User do
-  let(:user) {User.create!(email: "test@test.com", password: "secure", first_name: "John", last_name: "Doe", current_location: "Chicago, IL")}
+  let(:user) {User.new}
+
+  before :each do
+    user.email = "isaac@gmail.com"
+    user.password = "12345678"
+    user.password_confirmation = "12345678"
+    user.first_name = "Isaac"
+    user.last_name = "Node.js"
+    user.current_location = "Chicago, IL"
+    user.save!
+  end
 
   it "should have email, password_digest, first_name, last_name, current_location and an image_id" do
     image = double('image', class: Image, user_id: user.id)
     
-    expect(user.email).to eq "test@test.com"
-    expect(user.password_digest).not_to be_nil
-    expect(user.password_digest).not_to be "secure"
-    expect(user.first_name).to eq "John"
-    expect(user.last_name).to eq "Doe"
+    expect(user.email).to eq "isaac@gmail.com"
+    expect(user.encrypted_password).not_to be_nil
+    expect(user.encrypted_password).not_to be "12345678"
+    expect(user.first_name).to eq "Isaac"
+    expect(user.last_name).to eq "Node.js"
     expect(user.current_location).to eq "Chicago, IL"
     expect(image.user_id).to eq user.id
   end
@@ -44,7 +54,7 @@ describe User do
   end
 
   it "should not store plain text password" do
-    expect(user.password.to_s).to eq user.password_digest.to_s
+    expect(user).not_to have_db_column "password"
   end
 
 end
