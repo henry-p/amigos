@@ -11,6 +11,12 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
+		if @user.image
+			@image = @user.image
+		else
+			@user.image = Image.create
+			@image = @user.image
+		end
 	end
 
 	def update

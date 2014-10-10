@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  mount_uploader :picture, PictureUploader
+  # mount_uploader :picture, PictureUploader
   
   has_one :image, as: :imageable
   has_many :memberships, foreign_key: :member_id
@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   has_many :posts, foreign_key: :creator_id
   has_many :snippets, foreign_key: :creator_id
   has_many :comments, foreign_key: :creator_id
+
+  def store_dir
+    "uploads/profile_img/#{model.id}"      
+  end
 
   include BCrypt
 

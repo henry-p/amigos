@@ -1,7 +1,7 @@
 <%= form_for(@user, url: user_path(@user)) do |user| %>
 <%= user.label :profile_picture %>
 <%= user.hidden_field :picture_cache %>
-<%= user.file_field(:picture) %>
+<%= user.file_field :picture %>
 <br>
 <%= user.label :first_name %>
 <%= user.text_field :first_name %>

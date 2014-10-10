@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 			uploader = PictureUploader.new(image)
 			uploader.store!(image.picture)
 			post.images << image
+			raise params
 			redirect_to group_user_post_path(params[:group_id],params[:user_id], post.id)
 		else
 			render 'form'
