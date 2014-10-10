@@ -6,6 +6,9 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		if @post.images
+			@images = @post.images
+		end
 	end
 
 	def new
@@ -16,13 +19,16 @@ class PostsController < ApplicationController
 
 
 	def create
-		# uploader = PictureUploader.new
-		# uploader.store!(params[:post][:picture])
-		post = Post.new(post_params)
-		image = Image.new(path: params[:post][:picture].path, imageable_type: "post", imageable_id: post.id)
+		group = Group.find(params[:group_id])
+		user = User.find(params[:user_id])
+		post = user.posts.new(post_params)
+		post.group_id = group.id
+		image = post.images.new(picture: params[:post][:picture])
 
 		if post.save
-			image.save
+			uploader = PictureUploader.new(image)
+			uploader.store!(image.picture)
+			post.images << image
 			redirect_to group_user_post_path(params[:group_id],params[:user_id], post.id)
 		else
 			render 'form'

@@ -1,1 +1,5 @@
-show.html.erb
+<h1> <%= @snippet.title %> </h1>
+<% @images.each do |image| %>
+	<img src="<%= image.picture %>"> <br>
+<% end %>
+<p> <%= @snippet.content %></p>
