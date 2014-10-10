@@ -1839,3 +1839,677 @@ Migrating to AddDeviseToUsers (20141009223047)
   [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141008191832')[0m
   [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141008192109')
   [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141008192434')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-10 15:17:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 533ms (Views: 520.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 194ms (Views: 192.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/NOT_USED_application.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/assets/home_background.jpg" for 127.0.0.1 at 2014-10-10 15:17:54 -0500
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-10-10 15:18:14 -0500
+Processing by SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 246ms (Views: 222.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-10-10 15:18:14 -0500
+Processing by SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 164ms (Views: 162.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-10-10 15:18:21 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 148ms (Views: 146.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qt+758lB0mgQG0vzMvLikApS3msMsT9cwgmGWiVZ1aw=", "user"=>{"email"=>"test@test.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'test@test.test' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-10 20:18:42.668255"], ["email", "test@test.test"], ["encrypted_password", "$2a$10$/u2fCh0ENVeHwsgEX48FzeGdH9uAJYKhJ7tQJOd26p0ISoANNviF2"], ["updated_at", "2014-10-10 20:18:42.668255"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 5[0m  [["current_sign_in_at", "2014-10-10 20:18:42.722828"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2014-10-10 20:18:42.722828"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2014-10-10 20:18:42.724079"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 159ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/profile/5
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/profile/5" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mGroup Load (0.4ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "memberships" ON "groups"."id" = "memberships"."group_id" WHERE "memberships"."member_id" = $1  [["member_id", 5]]
+  Rendered users/show.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 165ms (Views: 160.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:42 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:43 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:43 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:43 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:43 -0500
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = 1 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"  WHERE "posts"."group_id" = $1  [["group_id", 1]]
+  [1m[36mSnippet Load (0.3ms)[0m  [1mSELECT "snippets".* FROM "snippets"  WHERE "snippets"."group_id" = $1[0m  [["group_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mComment Exists (0.3ms)[0m  SELECT  1 AS one FROM "comments"  WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 LIMIT 1  [["commentable_id", 2], ["commentable_type", "Post"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 2], ["commentable_type", "Post"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments"  WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 LIMIT 1  [["commentable_id", 2], ["commentable_type", "Snippet"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mComment Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "comments"  WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 LIMIT 1[0m  [["commentable_id", 1], ["commentable_type", "Snippet"]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2  [["commentable_id", 1], ["commentable_type", "Snippet"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mComment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "comments"  WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 LIMIT 1[0m  [["commentable_id", 1], ["commentable_type", "Post"]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2  [["commentable_id", 1], ["commentable_type", "Post"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  Rendered collection (30.5ms)
+  Rendered groups/show.html.erb within layouts/application (31.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 211ms (Views: 167.2ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:52 -0500
+
+
+Started GET "/assets/NOT_USED_application.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started GET "/assets/home_background.jpg" for 127.0.0.1 at 2014-10-10 15:18:53 -0500
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-10-10 15:19:49 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qt+758lB0mgQG0vzMvLikApS3msMsT9cwgmGWiVZ1aw="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-10 15:19:49 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 145ms (Views: 144.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/NOT_USED_application.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/images.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/snippets.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-10 15:19:50 -0500
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-10-10 15:20:18 -0500
+Processing by SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 208ms (Views: 206.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-10-10 15:26:36 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-10 15:26:36 -0500
+
+
+Started GET "/assets/images.css?body=1" for 127.0.0.1 at 2014-10-10 15:26:36 -0500
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-10-10 15:26:36 -0500
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-10 15:26:36 -0500
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-10-10 15:26:36 -0500
+
+
+Started GET "/assets/snippets.css?body=1" for 127.0.0.1 at 2014-10-10 15:26:36 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-10 15:26:36 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-10 15:26:36 -0500
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2014-10-10 15:51:04 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms
+
+TypeError - exception class/object expected:
+   () Users/colin/Desktop/amigos/app/controllers/groups_controller.rb:10:in `show'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/colin/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+   () Users/colin/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+   () Users/colin/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/29f3cfaed3fa8a8f/variables" for 127.0.0.1 at 2014-10-10 15:51:05 -0500
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2014-10-10 15:51:05 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms
+
+TypeError - exception class/object expected:
+   () Users/colin/Desktop/amigos/app/controllers/groups_controller.rb:10:in `show'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/colin/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+   () Users/colin/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+   () Users/colin/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/59d3dc68460f9c56/variables" for 127.0.0.1 at 2014-10-10 15:51:05 -0500
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2014-10-10 15:51:12 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms
+
+TypeError - exception class/object expected:
+   () Users/colin/Desktop/amigos/app/controllers/groups_controller.rb:10:in `show'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/colin/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+   () Users/colin/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+   () Users/colin/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/bc5b28b41ef0c9a9/variables" for 127.0.0.1 at 2014-10-10 15:51:12 -0500
+
+
+Started POST "/__better_errors/bc5b28b41ef0c9a9/eval" for 127.0.0.1 at 2014-10-10 15:51:26 -0500
+  [1m[36mGroup Load (0.6ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  [1m[35mGroup Load (1.0ms)[0m  SELECT  "groups".* FROM "groups"   ORDER BY "groups"."id" ASC LIMIT 1
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups"   ORDER BY "groups"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"  WHERE "posts"."group_id" = $1  [["group_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("content", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Why should know you're doing whatever"], ["created_at", "2014-10-10 20:56:07.646937"], ["title", "On Putting Dogs to Sleep"], ["updated_at", "2014-10-10 20:56:07.646937"]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mGroup Load (0.6ms)[0m  SELECT  "groups".* FROM "groups"   ORDER BY "groups"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "posts" SET "group_id" = $1, "updated_at" = $2 WHERE "posts"."id" = 3  [["group_id", 1], ["updated_at", "2014-10-10 20:56:34.203907"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"  WHERE "posts"."group_id" = $1  [["group_id", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1mSELECT  "groups".* FROM "groups"   ORDER BY "groups"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"  WHERE "posts"."group_id" = $1  [["group_id", 1]]
