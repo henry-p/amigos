@@ -1,13 +1,10 @@
 class SnippetsController < ApplicationController
 	def index
-		@snippet = Snippet.all.order('updated_at')
+		@snippets = Snippet.all.order('updated_at')
 	end
 
 	def show
 		@snippet = Snippet.find(params[:id])
-		if @snippet.images
-			@images = @snippet.images
-		end
 	end
 
 	def new
@@ -21,12 +18,8 @@ class SnippetsController < ApplicationController
 		user = User.find(params[:user_id])
 		snippet = user.snippets.new(snippet_params)
 		snippet.group_id = params[:group_id]
-		image = snippet.images.new(picture: params[:snippet][:picture])
 
 		if snippet.save
-			uploader = PictureUploader.new(image)
-			uploader.store!(image.picture)
-			snippet.images << image
 			redirect_to group_user_snippet_path(params[:group_id],params[:user_id], snippet.id)
 		else
 			render 'form'
@@ -34,16 +27,20 @@ class SnippetsController < ApplicationController
 	end
 
 	def edit	
+		@group = Group.find(params[:group_id])
 		@snippet = Snippet.find(params[:id])
+		@user = User.find(params[:user_id])
 	end
 
 	def update
-		
+		snippet = Snippet.find(params[:id])
+		snippet.update_attributes(snippet_params)
+		redirect_to group_user_snippet_path(params[:group_id],params[:user_id], snippet.id)
 	end
 
 	def destroy
-		@snippet = Snippet.find(params[:id])
-		@snippet.destroy
+		Snippet.destroy(params[:id])
+		redirect_to group_user_snippets
 	end
 
 	def snippet_params

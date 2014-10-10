@@ -1,14 +1,11 @@
 class PostsController < ApplicationController
 
 	def index
-		@post = Post.all.order('updated_at')
+		@posts = Post.all.order('updated_at')
 	end
 
 	def show
 		@post = Post.find(params[:id])
-		if @post.images
-			@images = @post.images
-		end
 	end
 
 	def new
@@ -17,18 +14,12 @@ class PostsController < ApplicationController
 		@post = Post.new	
 	end
 
-
 	def create
 		user = User.find(params[:user_id])
 		post = user.posts.new(post_params)
 		post.group_id = params[:group_id]
-		image = post.images.new(picture: params[:post][:picture])
 
 		if post.save
-			uploader = PictureUploader.new(image)
-			uploader.store!(image.picture)
-			post.images << image
-			raise params
 			redirect_to group_user_post_path(params[:group_id],params[:user_id], post.id)
 		else
 			render 'form'
@@ -36,16 +27,20 @@ class PostsController < ApplicationController
 	end
 
 	def edit	
+		@group = Group.find(params[:group_id])
+		@user = User.find(params[:user_id])
 		@post = Post.find(params[:id])
 	end
 
 	def update
-		
+		post = Post.find(params[:id])
+		post.update_attributes(post_params)
+		redirect_to group_user_post_path(params[:group_id],params[:user_id], post.id)
 	end
 
 	def destroy
-		@post = Post.find(params[:id])
-		@post.destroy
+		Post.destroy(params[:id])
+		redirect_to group_user_posts
 	end
 
 	def post_params
