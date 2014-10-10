@@ -1,5 +1,6 @@
 <div class="profile">
 <%= form_for @user, url: user_path(@user), html: {class: "profile_form"} do |user| %>
+<br>
 <%= user.label :first_name %>
 <%= user.text_field :first_name %>
 <br>
