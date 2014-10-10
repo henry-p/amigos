@@ -1,21 +1,25 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.label :current_password %><%= f.password_field :current_password, autocomplete: "off" %></div>
-
+  <div id="email_pw_edit"><%= f.label :email %><%= f.email_field :email, autofocus: true %>
+  <br>
+  
+  <%= f.label :current_password %><%= f.password_field :current_password, autocomplete: "off" %>
+  <br>
+  
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    Currently waiting confirmation for: <%= resource.unconfirmed_email %>
   <% end %>
 
-  <div><%= f.label :password %>    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Update" %></div>
-  <h3>Cancel my account</h3>
-
-  <p><%= button_to "Cancel", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <%= f.label :new_password %><%= f.password_field :password, autocomplete: "off" %>
+  <br>
+  
+  <%= f.label :confirm_new_password %><%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <br>
+  <br>
+  <%= f.submit "Update Profile" %>
+  <!-- <h3>Cancel My Account</h3> -->
 <% end %>
+
+  <p><%= button_to "Cancel Account", registration_path(resource_name), data: { confirm: "Are you sure? Cancelling your account is not reversible!" }, method: :delete %></p>
+</div>
