@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
   def logged_in?
-  	 current_user ? true : false
+    current_user ? true : false
   end
 
   def current_user
-  	@user ||= User.find_by_id(session[:user_id])
+  	@current_user ||= User.find_by_id(session[:user_id])
   end
 end

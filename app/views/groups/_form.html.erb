@@ -1,0 +1,5 @@
+<%= form_for @group do |f| %>
+<%=   f.text_field :name %>
+<%=   f.hidden_field 'jefe_id', :value => current_user.id %>
+<%=   f.submit %>
+<% end %>
