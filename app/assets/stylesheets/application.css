@@ -26,7 +26,7 @@ header {
 header nav {
   float: right;
 } 
-header button {
+header button, input[type=submit] {
   outline: none;
   width: 100px;
   padding: 10px;
@@ -40,17 +40,17 @@ header a:link, header a:link:hover, header a:active, header a:visited {
   text-decoration: none;
   color: white;
 }
-header button a {
+header button a, input[type=submit] {
   color: #ffffff;
   font-family: arial;
   font-size: 17px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
 }
-header button:hover {
+header button:hover, input[type=submit]:hover {
   background-color:#332F3E;
 }
-header button:active {
+header button:active, input[type=submit]:active {
   box-shadow: 0 0 10px #888888;
 }
 #header_text {
@@ -65,4 +65,11 @@ header button:active {
 #container {
   margin-top: 75px;
   margin-left: 25px;
+}
+
+#error_explanation ul {
+  color: #ED1C2D;
+  list-style: none;
+  background-color: #332F3E;
+  border-radius: 10px;
 }
