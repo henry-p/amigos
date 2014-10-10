@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#new_user {
+  @extend .profile 
+}
 
-
-div.profile {
+.profile {
 	color: white;
 	background: rgba(128,200,181,0.8);
 	width: 700px;
