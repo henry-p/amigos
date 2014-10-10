@@ -1,7 +1,38 @@
-User.create(email: "isaac@gmail.com", password: "isaac", first_name: "Isaac", last_name: "Noda", current_location: "Chicago, IL")
-User.create(email: "henry@gmail.com", password: "henry", first_name: "Henry", last_name: "Perschk", current_location: "Chicago, IL")
-User.create(email: "torey@gmail.com", password: "torey", first_name: "Torey", last_name: "Hickman", current_location: "Bahamas")
-User.create(email: "joe@gmail.com", password: "joe", first_name: "Joe", last_name: "Timmer", current_location: "Kalispell, MT")
+user = User.new
+user.email = "isaac@gmail.com"
+user.password = "12345678"
+user.password_confirmation = "12345678"
+user.first_name = "Isaac"
+user.last_name = "Node.js"
+user.current_location = "Chicago, IL"
+user.save!
+
+user = User.new
+user.email = "henry@gmail.com"
+user.password_confirmation = "12345678"
+user.first_name = "Henry"
+user.password = "12345678"
+user.last_name = "Perschk"
+user.current_location = "Chicago, IL"
+user.save!
+
+user = User.new
+user.email = "torey@gmail.com"
+user.password = "12345678"
+user.password_confirmation = "12345678"
+user.first_name = "Torey"
+user.last_name = "Hickman"
+user.current_location = "Bahamas"
+user.save!
+
+user = User.new
+user.email = "joe@gmail.com"
+user.password = "12345678"
+user.password_confirmation = "12345678"
+user.first_name = "Joe"
+user.last_name = "Timmer"
+user.current_location = "Kalispell, MT"
+user.save!
 
 Group.create(name: "DBC4eva", jefe_id: 2)
 

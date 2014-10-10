@@ -1,4 +1,5 @@
-<%= form_for(@user, url: user_path(@user)) do |user| %>
+<div class="profile">
+<%= form_for @user, url: user_path(@user), html: {class: "profile_form"} do |user| %>
 <%= user.label :profile_picture %>
 <%= user.hidden_field :picture_cache %>
 <%= user.file_field(:picture) %>
@@ -6,20 +7,27 @@
 <%= user.label :first_name %>
 <%= user.text_field :first_name %>
 <br>
+<br>
 <%= user.label :last_name %>
 <%= user.text_field :last_name %>
+<br>
 <br>
 <%= user.label :email %>
 <%= user.text_field :email %>
 <br>
-<%= user.label :new_password %>
-<%= user.password_field :password %>
-<br>
-<%= user.label :new_password_confirmation %>
-<%= user.password_field :password_confirmation %>
 <br>
 <%= user.label :current_location %>
 <%= user.text_field :current_location %>
 <br>
-<%= user.submit %>
+<br>
+<%= user.label :new_password %>
+<%= user.password_field :password %>
+<br>
+<br>
+<%= user.label :new_password_confirmation %>
+<%= user.password_field :password_confirmation %>
+<br>
+<br>
+<%= user.submit class: "button" %>
 <% end %>
+</div>
