@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
 
 	def index
+		@group = Group.find(params[:group_id])
+		@user = User.find(params[:user_id])
+		@user_posts = @user.posts
 		@posts = Post.all.order('updated_at')
 	end
 

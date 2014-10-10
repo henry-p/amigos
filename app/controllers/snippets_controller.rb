@@ -1,5 +1,8 @@
 class SnippetsController < ApplicationController
 	def index
+		@group = Group.find(params[:group_id])
+		@user = User.find(params[:user_id])
+		@user_snippets = @user.snippets.order('updated_at')
 		@snippets = Snippet.all.order('updated_at')
 	end
 

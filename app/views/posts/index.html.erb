@@ -1,1 +1,15 @@
-	<%= render @posts %>
+<h2><%= @user.first_name%>  <%=@user.last_name%>'s posts</h2>
+<% @user_posts.each do |post| %>
+	<div class="post">
+		<h5> <%= post.created_at.strftime("%B, %d, %Y") %></h5>
+			<p><%=post.content%></p>
+		<% unless post.comments.empty? %>
+			<% post.comments.each do |comment|	%>
+				<div class="comment">
+					<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
+					<p><%= comment.content %></p>
+				</div>
+			<% end %>
+		<% end %> 
+	</div>
+<% end %>
