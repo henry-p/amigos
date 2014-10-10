@@ -1,3 +1,64 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+div.profile {
+	color: white;
+	background: rgba(128,200,181,0.8);
+	width: 700px;
+	padding: 10px;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	font-size: 1.2em;
+	text-align: center;
+}
+.profile_form {
+	display: inline-block;
+	color: black;	
+}
+
+.profile_stats {
+	padding-left: 0px;
+	list-style: none;
+}
+
+
+label{
+ float: left;
+    width: 150px;
+    text-align: right;
+    margin-right: 0.5em;
+}
+
+.button {
+  outline: none;
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #4DB788;
+  border-radius: 10px;
+  border: 1px solid #80C8B5;
+  color: white;
+}
+
+.button a {
+  color: #ffffff;
+  font-family: arial;
+  font-size: 17px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+
+.button:hover {
+  background-color:#332F3E;
+}
+
+.button:active {
+  box-shadow: 0 0 10px #888888;
+}
+
+
