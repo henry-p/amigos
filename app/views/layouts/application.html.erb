@@ -10,7 +10,7 @@
     <header>
       <div id="header_text">Friendzone</div>
       <nav>
-        <% if logged_in? %>
+        <% if user_signed_in? %>
         <button>
         <a href="">Sign Out</a>
         </button>
@@ -25,6 +25,8 @@
       </nav>
     </header>
     <div id="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>
