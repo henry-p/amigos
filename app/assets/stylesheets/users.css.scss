@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#new_user {
+  @extend .profile 
+}
 
-
-div.profile {
+.profile {
 	color: white;
 	background: rgba(128,200,181,0.8);
 	width: 700px;
@@ -16,10 +18,22 @@ div.profile {
 	font-size: 1.2em;
 	text-align: center;
 }
+.profile_form {
+	display: inline-block;
+	color: black;	
+}
 
 .profile_stats {
 	padding-left: 0px;
 	list-style: none;
+}
+
+
+label{
+ float: left;
+    width: 150px;
+    text-align: right;
+    margin-right: 0.5em;
 }
 
 .button {
@@ -30,6 +44,7 @@ div.profile {
   background-color: #4DB788;
   border-radius: 10px;
   border: 1px solid #80C8B5;
+  color: white;
 }
 
 .button a {

@@ -35,6 +35,11 @@ header button {
   border-radius: 10px;
   border: 1px solid #80C8B5;
 }
+header a:link, header a:link:hover, header a:active, header a:visited {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
 header button a {
   color: #ffffff;
   font-family: arial;
