@@ -13,22 +13,19 @@
 }
 
 #timeline {
-	color:white;
+	color: white;
 	background: rgba(51,47,62,0.8);
-	width: 700px;
+	width: 70%;
 	padding: 10px;
 	border-radius: 10px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	font-size: 1.2em;
-	text-align: center;
 }
-
 
 .post, .snippet {
 	border-radius: 5px;
 	width: 90%;
 	text-align: left;
 	padding: 5px;
-	margin: 5px;
+	margin: 0 auto;
 }

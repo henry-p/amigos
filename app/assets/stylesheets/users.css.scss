@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#new_user {
-  @extend .profile 
-}
-
 .profile {
 	color: white;
 	background: rgba(128,200,181,0.8);
@@ -63,4 +59,24 @@ label{
   box-shadow: 0 0 10px #888888;
 }
 
+#new_user, #edit_user {
+  @extend .profile;
+  color: black;
+  
+  a {
+    color: lightgray;
+    text-decoration: none;
+  }
+  input[type="checkbox"] {
+    margin-right: 158px;
+    width: 25px;
+    height: 25px;
+  } 
+}
 
+input:not([type=submit]) {
+  border-radius: 7px;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+} 
