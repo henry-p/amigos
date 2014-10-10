@@ -63,8 +63,9 @@ header button:active, input[type=submit]:active {
   color: white; 
 }
 #container {
-  margin-top: 75px;
-  margin-left: 25px;
+  width: 80%;
+  padding-top: 75px;
+  margin: 0 auto;
 }
 
 #error_explanation ul {
