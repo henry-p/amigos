@@ -19,10 +19,9 @@ class PostsController < ApplicationController
 
 
 	def create
-		group = Group.find(params[:group_id])
 		user = User.find(params[:user_id])
 		post = user.posts.new(post_params)
-		post.group_id = group.id
+		post.group_id = params[:group_id]
 		image = post.images.new(picture: params[:post][:picture])
 
 		if post.save

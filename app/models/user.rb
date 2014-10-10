@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  mount_uploader :picture, PictureUploader
+  
   has_one :image, as: :imageable
   has_many :memberships, foreign_key: :member_id
   has_many :groups, through: :memberships

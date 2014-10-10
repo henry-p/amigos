@@ -18,11 +18,10 @@ class SnippetsController < ApplicationController
 
 
 	def create
-		group = Group.find(params[:group_id])
 		user = User.find(params[:user_id])
 		snippet = user.snippets.new(snippet_params)
-		snippet.group_id = group.id
-		image = Snippet.images.new(picture: params[:snippet][:picture])
+		snippet.group_id = params[:group_id]
+		image = snippet.images.new(picture: params[:snippet][:picture])
 
 		if snippet.save
 			uploader = PictureUploader.new(image)
@@ -48,6 +47,6 @@ class SnippetsController < ApplicationController
 	end
 
 	def snippet_params
-		params.require(:snippet).permit(:title, :content)
+		params.require(:snippet).permit(:content)
 	end
 end
