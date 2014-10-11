@@ -1,7 +1,12 @@
 <h2><%= @user.first_name%>  <%=@user.last_name%>'s snippets</h2>
 <% @user_snippets.each do |snippet| %>
 	<div class="snippet">
-		<h5> <%= snippet.created_at.strftime("%B, %d, %Y") %></h5>
+		<h5><%= snippet.created_at.strftime("%B, %d, %Y") %></h5>
+			<% unless snippet.images.empty? %>
+				<% snippet.images.each do |image| %>	
+					<img src="<%= image.picture %>"> 
+				<% end %>
+			<% end %>
 			<p><%=snippet.content%></p>
 		<% unless snippet.comments.empty? %>
 			<% snippet.comments.each do |comment|	%>

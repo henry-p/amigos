@@ -1,7 +1,7 @@
 <!-- user GET  /profile/:id(.:format)  users#show -->
 
 <div class="profile">
-	<img src="<%= @user.image.picture %>"> <br>
+	<img src="<%= @user.image.picture if @user.image%>"> <br>
 <h2><%= @user.first_name %> <%= @user.last_name %></h2>	
 <ul class="profile_stats">
 	<li><%= @user.email %></li>

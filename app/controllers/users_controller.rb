@@ -19,8 +19,6 @@ class UsersController < ApplicationController
 		if params[:user][:picture]
 			image = Image.new(picture: params[:user][:picture])
 			@user.image = image
-			uploader = PictureUploader.new(image)
-			uploader.store!(image.picture)
 		end
 		
 		@user.update_attributes(user_params)
