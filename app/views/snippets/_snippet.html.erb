@@ -1,3 +1,4 @@
+<%= link_to [@group, snippet.creator, snippet] do %>
 <div class="snippet">
 <h3>Snippet</h3>
 <h5><%=User.find_by_id(snippet.creator_id).first_name%>  <%=User.find_by_id(snippet.creator_id).last_name%> - <%= snippet.created_at.strftime("%B, %d, %Y") %></h5>
@@ -11,3 +12,4 @@
 <% end %>
 <% end %> 
 </div>
+<% end %>

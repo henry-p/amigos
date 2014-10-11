@@ -8,12 +8,16 @@
 	<li><%= @user.current_location %></li>
 </ul>
 
-<button class="button"><%= link_to 'Edit Profile', edit_user_url(@user) %></button>
+<%= button_to 'Edit Profile', edit_user_url(@user), class: 'button', method: :get %>
+
+<%= button_to 'Change Email/Password', edit_user_registration_url(@user), class: 'button', id: 'pw_button', method: :get %>
+
+<%= button_to 'Create New Group', new_group_url(@user), class: 'button', method: :get %>
 
 <h3>Memberships</h3>
 <ul class="profile_stats">
 	<% @user.groups.each do |group| %>
-	<li><%= link_to group.name %> - <strong>Jefe:</strong> <%= group.jefe.first_name %> <%= group.jefe.last_name %></li>
+	<li><%= link_to group.name, group %> - <strong>Jefe:</strong> <%= group.jefe.first_name %> <%= group.jefe.last_name %></li>
 	<br>
 <% end %>
 </ul>

@@ -12,9 +12,26 @@
   margin: 15px;
 }
 
+#new_group {
+  color: white;
+  background: rgba(128,200,181,0.8);
+  width: 700px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+input#group_name {
+  color: black;
+}
+
 #timeline {
 	color: white;
-	background: rgba(51,47,62,0.8);
+	background: rgba(167, 166, 168, 0.9);
 	width: 70%;
 	padding: 10px;
 	border-radius: 10px;
@@ -22,10 +39,39 @@
 	font-size: 1.2em;
 }
 
+.post:first-child, .snippet:first-child {
+  margin-top: 25px;
+  padding-top: 0px;
+}
+
+#timeline > a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .post, .snippet {
-	border-radius: 5px;
+  overflow: hidden;
+  border-radius: 10px;
 	width: 90%;
 	text-align: left;
-	padding: 5px;
+	padding: 10px 25px 10px 25px;
 	margin: 0 auto;
+}
+.comment {
+  font-size: 0.8em;
+  width: 45%;
+  margin-left: 5%;
+  border-top: 1px solid lightgray;
+}
+
+.post:hover, .snippet:hover {
+  background-color: gray;
+  box-shadow: 0 0 20px #888888;
+  .comment {
+    border-color: #88c4b4;
+  } 
+}
+
+.post:active, .snippet:active {
+  box-shadow: 0 0 20px white;
 }
