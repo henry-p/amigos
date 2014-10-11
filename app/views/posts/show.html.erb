@@ -11,12 +11,14 @@
 			<div class="comment">
 				<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
 				<%= comment.content %>
-			<div>
+			</div>
 		<% end %>
 	<% end %>
+	<br>
+	<br>
 <%= link_to "comment", new_group_user_post_comment_path(@post.group, @post.creator, @post)%>
 <%= link_to "Edit", edit_group_user_post_path %>
 <%= link_to "Delete", [@post.group, @post.creator, @post], method: :delete %>
 </div>
-
+<br>
 <%= link_to "Back to posts", group_user_posts_path %>
