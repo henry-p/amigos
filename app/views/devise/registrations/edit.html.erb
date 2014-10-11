@@ -1,7 +1,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div id="email_pw_edit"><%= f.label :email %><%= f.email_field :email, autofocus: true %>
+  <div id="email_pw_edit"><%= f.label :email %><%= f.email_field :email %>
   <br>
   
   <%= f.label :current_password %><%= f.password_field :current_password, autocomplete: "off" %>

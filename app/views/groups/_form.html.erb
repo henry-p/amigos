@@ -1,5 +1,8 @@
 <%= form_for @group do |f| %>
-<%=   f.text_field :name %>
+<h2>New Group</h2>
+<%=   f.text_field :name, placeholder: "Group Name" %>
 <%=   f.hidden_field 'jefe_id', :value => current_user.id %>
+<br>
+<br>
 <%=   f.submit %>
 <% end %>
