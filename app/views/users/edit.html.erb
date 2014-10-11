@@ -4,15 +4,13 @@
 <%= user.label :first_name %>
 <%= user.text_field :first_name %>
 <br>
-
 <%= user.label :last_name %>
 <%= user.text_field :last_name %>
-
 <br>
 <%= user.label :current_location %>
 <%= user.text_field :current_location %>
 <br>
 <br>
-<%= user.submit class: "button" %>
+<%= user.submit class: "button", value: "Update Profile" %>
 <% end %>
 </div>
