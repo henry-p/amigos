@@ -15,6 +15,14 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
+		
+		if params[:user][:picture]
+			image = Image.new(picture: params[:user][:picture])
+			@user.image = image
+			uploader = PictureUploader.new(image)
+			uploader.store!(image.picture)
+		end
+		
 		@user.update_attributes(user_params)
 		redirect_to user_path
 	end
