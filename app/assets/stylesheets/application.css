@@ -78,3 +78,7 @@ header button:active, input[type=submit]:active {
 input[type=submit] {
   width: 200px;
 }
+
+input, textarea {
+  color: black;
+} 
