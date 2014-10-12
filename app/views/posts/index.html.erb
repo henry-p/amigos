@@ -1,3 +1,4 @@
+<div id="timeline">
 <h2><%= @user.first_name%>  <%=@user.last_name%>'s posts</h2>
 	<% if current_user.id == @user.id %>
 		<button><%= link_to "Create New Post", new_group_user_post_path %></button>
@@ -22,3 +23,4 @@
 		<% end %> 
 	</div>
 <% end %>
+</div>
