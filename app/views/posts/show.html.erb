@@ -19,10 +19,13 @@
 	<% end %>
 	<br>
 	<br>
-<%= link_to "comment", new_group_user_post_comment_path(@post.group, @post.creator, @post)%>
+<%= link_to "Comment", new_group_user_post_comment_path(@post.group, @post.creator, @post)%>
+<% if current_user.id == @post.creator_id %>
 <%= link_to "Edit", edit_group_user_post_path %>
 <%= link_to "Delete", [@post.group, @post.creator, @post], method: :delete %>
+<% end %>
 </div>
 <br>
-<%= link_to "Back to posts", group_user_posts_path %>
+<%= link_to "More posts from this user", group_user_posts_path %>
+<%= link_to "Back to group", "/groups/#{@post.group_id}" %>
 </div>
