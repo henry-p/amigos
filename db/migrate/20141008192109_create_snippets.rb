@@ -7,5 +7,8 @@ class CreateSnippets < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :snippets, :creator_id
+    add_index :snippets, :group_id
   end
 end
