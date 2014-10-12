@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :login_required
-	before_action :group_user_and_post
+	before_action :group_user_and_post_objects
 
 	def index
 		@user_posts = @user.posts.order('updated_at DESC')
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 		
 		if post.save
 			post.images.create(picture: params[:post][:picture])
-			redirect_to group_user_post_path(params[:group_id],params[:user_id], post.id)
+			redirect_to group_user_post_path(@group, @user, post)
 		else
 			render 'form'
 		end
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 
 	def update
 		@post.update_attributes(post_params)
-		redirect_to group_user_post_path(@group, @user, @post.id)
+		redirect_to group_user_post_path(@group, @user, @post)
 	end
 
 	def destroy
@@ -42,21 +42,21 @@ class PostsController < ApplicationController
 		redirect_to group_user_posts_path
 	end
 
-	def group_user_and_post
+	def group_user_and_post_objects
 		@post = Post.find(params[:id]) if %w[show edit update destroy].include?(params[:action])
 		@group = Group.find(params[:group_id])
 		@user = User.find(params[:user_id])
 	end
 
+	def is_current_user?
+		redirect_to group_user_posts_path unless current_user.id == @user.id
+	end
+
+	def login_required
+	  redirect_to new_user_session_path unless current_user
+	end
+	
 	private 
-		def is_current_user?
-			redirect_to group_user_posts_path unless current_user.id == @user.id
-		end
-
-		def login_required
-		  redirect_to new_user_session_path unless current_user
-		end
-
 		def post_params
 			params.require(:post).permit(:title, :content)
 		end

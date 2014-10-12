@@ -2,7 +2,7 @@
 	<h1> <%= @post.title %> </h1>
 	<% if @images  %>
 		<% @images.each do |image| %>
-		<img src="<%= image.picture.url %>">
+		<img src="<%= image.picture %>">
 		<% end %>
 	<% end %>
 	<p> <%= @post.content %></p>

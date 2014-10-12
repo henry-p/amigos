@@ -6,7 +6,7 @@
 	<div class="snippet">
 		<h5><%= snippet.created_at.strftime("%B, %d, %Y") %></h5>
 			<% unless snippet.image.empty? %>	
-					<img src="<%= snippet.image.picture %>"> 
+					<img src="<%= snippet.image.picture.url %>"> 
 			<% end %>
 			<p><%=snippet.content%></p>
 		<% unless snippet.comments.empty? %>
