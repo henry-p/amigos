@@ -1,1 +1,21 @@
-show.html.erb
+<div class="snippet">
+	<% if @images  %>
+		<% @images.each do |image| %>
+		<img src="<%= image.picture.url %>">
+		<% end %>
+	<% end %>
+	<p> <%= @snippet.content %></p>
+	<% if @comments %>
+		<% @comments.each do |comment| %>
+			<div class="comment">
+				<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
+				<%= comment.content %>
+			</div>
+		<% end %>
+	<% end %>
+<%= link_to "comment", new_group_user_snippet_comment_path(@snippet.group, @snippet.creator, @snippet)%>
+<%= link_to "Edit", edit_group_user_snippet_path%>
+<%= link_to "Delete", [@snippet.group, @snippet.creator, @snippet], method: :delete %>
+</div>
+
+<%= link_to "Back to snippets", group_user_snippets_path %>

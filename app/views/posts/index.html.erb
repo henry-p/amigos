@@ -1,1 +1,24 @@
-index.html.erb
+<h2><%= @user.first_name%>  <%=@user.last_name%>'s posts</h2>
+	<% if current_user.id == @user.id %>
+		<button><%= link_to "Create New Post", new_group_user_post_path %></button>
+	<% end %>
+<% @user_posts.each do |post| %>
+	<div class="post">
+		<h3><%= link_to post.title, [post.group, post.creator, post]%></h3>
+		<h5><%= post.created_at.strftime("%B, %d, %Y") %></h5>
+			<% unless post.images.empty? %>
+				<% post.images.each do |image| %>	
+					<img src="<%= image.picture %>"> 
+				<% end %>
+			<% end %>
+			<p><%=post.content%></p>
+		<% unless post.comments.empty? %>
+			<% post.comments.each do |comment|	%>
+				<div class="comment">
+					<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
+					<p><%= comment.content %></p>
+				</div>
+			<% end %>
+		<% end %> 
+	</div>
+<% end %>

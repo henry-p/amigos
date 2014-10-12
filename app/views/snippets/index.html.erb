@@ -1,1 +1,23 @@
-index.html.erb
+<h2><%= @user.first_name%>  <%=@user.last_name%>'s snippets</h2>
+<% if current_user.id == @user.id %>
+	<button><%= link_to "Create New Snippet", new_group_user_snippet_path %></button>
+<% end %>
+<% @user_snippets.each do |snippet| %>
+	<div class="snippet">
+		<h5><%= snippet.created_at.strftime("%B, %d, %Y") %></h5>
+			<% unless snippet.images.empty? %>
+				<% snippet.images.each do |image| %>	
+					<img src="<%= image.picture %>"> 
+				<% end %>
+			<% end %>
+			<p><%=snippet.content%></p>
+		<% unless snippet.comments.empty? %>
+			<% snippet.comments.each do |comment|	%>
+				<div class="comment">
+					<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
+					<p><%= comment.content %></p>
+				</div>
+			<% end %>
+		<% end %> 
+	</div>
+<% end %>
