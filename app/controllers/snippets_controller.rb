@@ -1,4 +1,7 @@
 class SnippetsController < ApplicationController
+	before_filter :login_required
+
+
 	def index
 		@group = Group.find(params[:group_id])
 		@user = User.find(params[:user_id])
@@ -8,8 +11,8 @@ class SnippetsController < ApplicationController
 
 	def show
 		@snippet = Snippet.find(params[:id])
-		@image = @snippet.images if @snippet.images != []
-		@comments = @snippet.comments.order('updated_at DESC') if @snippet.comments != [] 
+		@image = @snippet.image if !@snippet.image.empty?
+		@comments = @snippet.comments.order('updated_at DESC') if !@snippet.comments.empty? 
 	end
 
 	def new
@@ -25,6 +28,7 @@ class SnippetsController < ApplicationController
 		snippet.group_id = params[:group_id]
 
 		if snippet.save
+			snippet.image.create(picture: params[:post][:picture])
 			redirect_to group_user_snippet_path(params[:group_id],params[:user_id], snippet.id)
 		else
 			render 'form'
@@ -46,6 +50,16 @@ class SnippetsController < ApplicationController
 	def destroy
 		Snippet.destroy(params[:id])
 		redirect_to group_user_snippets
+	end
+
+	private 
+
+	def is_current_user?
+		current_user.id == params[:user_id]
+	end
+	
+	def login_required
+	  redirect_to new_user_session_path unless current_user
 	end
 
 	def snippet_params

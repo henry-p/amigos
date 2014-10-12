@@ -1,8 +1,6 @@
 <div class="snippet">
-	<% if @images  %>
-		<% @images.each do |image| %>
-		<img src="<%= image.picture.url %>">
-		<% end %>
+	<% if @image  %>
+		<img src="<%= @image.picture %>">
 	<% end %>
 	<p> <%= @snippet.content %></p>
 	<% if @comments %>
