@@ -26,6 +26,10 @@ class PostsController < ApplicationController
 		
 		if post.save
 			post.images.create(picture: params[:post][:picture])
+
+			# Send Notification
+			GroupMailer.group_post_notifications(post.group, post)
+
 			redirect_to group_user_post_path(params[:group_id],params[:user_id], post.id)
 		else
 			render 'form'
