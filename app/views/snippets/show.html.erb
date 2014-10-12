@@ -14,10 +14,12 @@
 			</div>
 		<% end %>
 	<% end %>
-<%= link_to "comment", new_group_user_snippet_comment_path(@snippet.group, @snippet.creator, @snippet)%>
+<%= link_to "Comment", new_group_user_snippet_comment_path(@snippet.group, @snippet.creator, @snippet)%>
+<% if current_user.id == @snippet.creator_id %>
 <%= link_to "Edit", edit_group_user_snippet_path%>
 <%= link_to "Delete", [@snippet.group, @snippet.creator, @snippet], method: :delete %>
+<% end %>
 </div>
-
-<%= link_to "Back to snippets", group_user_snippets_path %>
+<%= link_to "More snippets from this user", group_user_snippets_path %>
+<%= link_to "Back to group", "/groups/#{@snippet.group_id}" %>
 </div>
