@@ -9,8 +9,8 @@
 			<div class="comment">
 				<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
 				<%= comment.content %>
-				<%= link_to "Edit Comment", edit_group_user_snippet_comment_path(@snippet.group, @snippet.creator, @snippet, comment) %>
-				<%= link_to "Delete Comment", [@snippet.group, @snippet.creator, @snippet], method: :delete %>
+				<%= link_to "Edit", edit_group_user_snippet_comment_path(@snippet.group, @snippet.creator, @snippet, comment) %>
+				<%= link_to "Delete", [@snippet.group, @snippet.creator, @snippet, comment], method: :delete %>
 			</div>
 		<% end %>
 	<% end %>
