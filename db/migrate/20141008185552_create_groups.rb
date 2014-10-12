@@ -6,5 +6,7 @@ class CreateGroups < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :groups, :jefe_id
   end
 end

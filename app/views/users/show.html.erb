@@ -1,7 +1,8 @@
 <!-- user GET  /profile/:id(.:format)  users#show -->
 
 <div class="profile">
-	<img src="<%= @user.image.picture if @user.image%>"> <br>
+<br>
+	<img id="profile_img" src="<%= @user.image.picture if @user.image%>"> <br>
 <h2><%= @user.first_name %> <%= @user.last_name %></h2>	
 <ul class="profile_stats">
 	<li><%= @user.email %></li>
@@ -14,10 +15,10 @@
 
 <%= button_to 'Create New Group', new_group_url(@user), class: 'button', method: :get %>
 
-<h3>Memberships</h3>
+<h2>Memberships</h2>
 <ul class="profile_stats">
 	<% @user.groups.each do |group| %>
-	<li><%= link_to group.name, group %> - <strong>Jefe:</strong> <%= group.jefe.first_name %> <%= group.jefe.last_name %></li>
+	<li><%= link_to group.name, group %><br><strong>Jefe:</strong> <%= group.jefe.first_name %> <%= group.jefe.last_name %></li>
 	<br>
 <% end %>
 </ul>

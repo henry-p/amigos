@@ -25,12 +25,17 @@ ActiveRecord::Schema.define(version: 20141009232838) do
     t.datetime "updated_at"
   end
 
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
+  add_index "comments", ["creator_id"], name: "index_comments_on_creator_id", using: :btree
+
   create_table "groups", force: true do |t|
     t.string   "name"
     t.integer  "jefe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "groups", ["jefe_id"], name: "index_groups_on_jefe_id", using: :btree
 
   create_table "images", force: true do |t|
     t.integer  "imageable_id"
@@ -40,12 +45,17 @@ ActiveRecord::Schema.define(version: 20141009232838) do
     t.string   "picture"
   end
 
+  add_index "images", ["imageable_id"], name: "index_images_on_imageable_id", using: :btree
+
   create_table "memberships", force: true do |t|
     t.integer  "member_id"
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "memberships", ["group_id"], name: "index_memberships_on_group_id", using: :btree
+  add_index "memberships", ["member_id"], name: "index_memberships_on_member_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.integer  "group_id"
@@ -56,6 +66,9 @@ ActiveRecord::Schema.define(version: 20141009232838) do
     t.datetime "updated_at"
   end
 
+  add_index "posts", ["creator_id"], name: "index_posts_on_creator_id", using: :btree
+  add_index "posts", ["group_id"], name: "index_posts_on_group_id", using: :btree
+
   create_table "snippets", force: true do |t|
     t.string   "content"
     t.integer  "creator_id"
@@ -63,6 +76,9 @@ ActiveRecord::Schema.define(version: 20141009232838) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "snippets", ["creator_id"], name: "index_snippets_on_creator_id", using: :btree
+  add_index "snippets", ["group_id"], name: "index_snippets_on_group_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
