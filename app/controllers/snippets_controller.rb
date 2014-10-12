@@ -22,6 +22,8 @@ class SnippetsController < ApplicationController
 		if snippet.save
 			snippet.image.create(picture: params[:snippet][:picture])
 			redirect_to group_user_snippet_path(@group, @user, snippet)
+			# Send Notification
+			GroupMailer.group_snippet_notifications(snippet.group, snippet)
 		else
 			render 'form'
 		end

@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   has_many :snippets, foreign_key: :creator_id
   has_many :comments, foreign_key: :creator_id
 
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
   # include BCrypt
 
   # def password

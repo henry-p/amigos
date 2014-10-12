@@ -1,37 +1,37 @@
 user = User.new
-user.email = "isaac@gmail.com"
+user.email = "cwshevlin@gmail.com"
 user.password = "12345678"
 user.password_confirmation = "12345678"
-user.first_name = "Isaac"
-user.last_name = "Node.js"
+user.first_name = "Colin"
+user.last_name = "Shevlin"
 user.current_location = "Chicago, IL"
 user.save!
 
 user = User.new
-user.email = "henry@gmail.com"
+user.email = "henry.perschk@gmail.com"
+user.password = "12345678"
 user.password_confirmation = "12345678"
 user.first_name = "Henry"
-user.password = "12345678"
 user.last_name = "Perschk"
 user.current_location = "Chicago, IL"
 user.save!
 
 user = User.new
-user.email = "torey@gmail.com"
+user.email = "nixonlr@gmail.com"
 user.password = "12345678"
 user.password_confirmation = "12345678"
-user.first_name = "Torey"
-user.last_name = "Hickman"
-user.current_location = "Bahamas"
+user.first_name = "Nixon"
+user.last_name = "Da Bozz"
+user.current_location = "Chicago, IL"
 user.save!
 
 user = User.new
-user.email = "joe@gmail.com"
+user.email = "ndunetts@gmail.com"
 user.password = "12345678"
 user.password_confirmation = "12345678"
-user.first_name = "Joe"
-user.last_name = "Timmer"
-user.current_location = "Kalispell, MT"
+user.first_name = "Sir"
+user.last_name = "Nigelton"
+user.current_location = "Chicago, IL"
 user.save!
 
 Group.create(name: "DBC4eva", jefe_id: 2)

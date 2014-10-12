@@ -16,6 +16,9 @@
 }
 .profile_form  {
 	display: inline-block;
+  #user_picture {
+    margin-right: -180px;
+  }
 }
 
 #user_first_name, #user_last_name, #user_current_location, #user_email, #user_current_password, #user_password, #user_password_confirmation{

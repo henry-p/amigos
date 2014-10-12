@@ -35,6 +35,21 @@ header button, input[type=submit] {
   border-radius: 10px;
   border: 1px solid #80C8B5;
 }
+
+a:link {
+  font-weight: 700;
+  color:#EAA037;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #332F3E;
+}
+
+a:hover {
+  color: #700130;
+}
+
 header a:link, header a:link:hover, header a:active, header a:visited {
   display: block;
   text-decoration: none;
@@ -78,3 +93,14 @@ header button:active, input[type=submit]:active {
 input[type=submit] {
   width: 200px;
 }
+
+input, textarea {
+  color: black;
+} 
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 7px;
+  border: 5px solid white;
+} 
