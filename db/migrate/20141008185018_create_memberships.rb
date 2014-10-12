@@ -5,6 +5,9 @@ class CreateMemberships < ActiveRecord::Migration
       t.integer :group_id
 
       t.timestamps
+
+      add_index :memberships, :member_id
+      add_index :memberships, :group_id
     end
   end
 end
