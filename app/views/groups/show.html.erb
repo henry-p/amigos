@@ -1,5 +1,8 @@
 <h1 id="group-name"><%= @group.name %></h1>
-
 <div id="timeline">
-	<%= render @commentables %>
+  <div id="btn_new_post_snippet">
+    <%= link_to "New Post", new_group_user_post_path(@group, current_user) %> | 
+    <%= link_to "New Snippet", new_group_user_snippet_path(@group, current_user) %>
+  </div>
+  <%= render @commentables %>
 </div>
