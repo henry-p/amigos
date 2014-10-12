@@ -26,6 +26,9 @@ class SnippetsController < ApplicationController
 
 		if snippet.save
 			redirect_to group_user_snippet_path(params[:group_id],params[:user_id], snippet.id)
+
+			# Send Notification
+			GroupMailer.group_snippet_notifications(snippet.group, snippet)
 		else
 			render 'form'
 		end
