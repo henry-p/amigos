@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
 		if @group.save
 			@membership = Membership.create(member_id: current_user.id, group_id: @group.id)
 			flash[:notice] = "Group successfully created."
-			redirect_to user_index_path
+			redirect_to "/profile/#{current_user.id}"
 		else
 			flash[:error] = "Group name already exists"
 			redirect_to new_group_path
