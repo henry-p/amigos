@@ -24,6 +24,7 @@ class GroupsController < ApplicationController
 	def create
 		@group = Group.new(group_params)
 		if @group.save
+			@membership = Membership.create(member_id: current_user.id, group_id: @group.id)
 			flash[:notice] = "Group successfully created."
 			redirect_to user_index_path
 		else
