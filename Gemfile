@@ -53,3 +53,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'shoulda-matchers'
 end
+
+group :production, :staging do
+  gem 'rails_12factor'
+end
