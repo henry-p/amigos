@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   
 	def new
 		@comment = Comment.new
+		session[:return_to] = request.referer
 	end
 
 	def create
@@ -12,27 +13,27 @@ class CommentsController < ApplicationController
 		
 		if @post
 			@post.comments << @comment
-			redirect_to [@group, @post.creator, @post]
 		elsif @snippet
 			@snippet.comments << @comment
-			redirect_to [@group, @snippet.creator, @snippet]
 		end
 		
+		redirect_to session.delete(:return_to)
 	end
 
 	def edit
 		@comment = Comment.find(params[:id])
+		session[:return_to] = request.referer
 	end
 
-	def update
+	def update            
 		@comment = Comment.find(params[:id])
 		@comment.update_attributes(comment_params)
-		redirect_to (@post ? [@group, @post.creator, @post] : [@group, @snippet.creator, @snippet])
+		redirect_to session.delete(:return_to)
 	end
 
 	def destroy
 		@comment.destroy
-		redirect_to (@post ? [@group, @post.creator, @post] : [@group, @snippet.creator, @snippet])
+		redirect_to :back 
 	end
 	
 	def group_user_and_comment_objects
@@ -40,10 +41,6 @@ class CommentsController < ApplicationController
 		params[:snippet_id] ? @snippet = Snippet.find(params[:snippet_id]) : @post = Post.find(params[:post_id])
 		@group = Group.find(params[:group_id])
 		@post_or_snippet_creator = User.find(params[:user_id])
-	end
-
-	def is_creator_of_comment?
-		redirect_to [@group, @post_or_snippet_creator, @snippet] unless current_user.id == @comment.creator_id
 	end
 
 	def login_required

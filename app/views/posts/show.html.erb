@@ -1,6 +1,7 @@
 <div id="timeline">
 <div class="post">
 	<h1> <%= @post.title %> </h1>
+	<h5><%=@post.creator.first_name%>  <%=@post.creator.last_name%> - <%= @post.created_at.strftime("%B %d, %Y") %></h5>
 	<% if @images  %>
 		<% @images.each do |image| %>
 		<img src="<%= image.picture %>">
@@ -12,20 +13,22 @@
 			<div class="comment">
 				<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
 				<%= comment.content %>
-				<%= link_to "Edit", edit_group_user_post_comment_path(@post.group, @post.creator, @post, comment) %>
-				<%= link_to "Delete", [@post.group, @post.creator, @post, comment], method: :delete %>
+				<% if current_user == comment.creator %>
+					<%= link_to "Edit", edit_group_user_post_comment_path(@post.group, @post.creator, @post, comment) %>
+					<%= link_to "Delete", [@post.group, @post.creator, @post, comment], method: :delete %>
+				<% end %>
 			</div>
 		<% end %>
 	<% end %>
 	<br>
 	<br>
-<%= link_to "Comment", new_group_user_post_comment_path(@post.group, @post.creator, @post)%>
-<% if current_user.id == @post.creator_id %>
-<%= link_to "Edit", edit_group_user_post_path %>
-<%= link_to "Delete", [@post.group, @post.creator, @post], method: :delete %>
-<% end %>
+	<button><%= link_to "Comment", new_group_user_post_comment_path(@post.group, @post.creator, @post)%></button>
+	<% if current_user == @post.creator %>
+		<button><%= link_to "Edit", edit_group_user_post_path %></button>
+		<button><%= link_to "Delete", [@post.group, @post.creator, @post], method: :delete %></button>
+	<% end %>
 </div>
 <br>
-<%= link_to "More posts from this user", group_user_posts_path %>
+<%= link_to "More posts from this user", group_user_posts_path %>   
 <%= link_to "Back to group", "/groups/#{@post.group_id}" %>
 </div>

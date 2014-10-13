@@ -7,21 +7,23 @@ class SnippetsController < ApplicationController
 	end
 
 	def show
+		@snippet = @group.members.find(@user.id).snippets.find(@snippet.id)
 		@image = @snippet.image.first if !@snippet.image.empty?
 		@comments = @snippet.comments.order('updated_at DESC') if !@snippet.comments.empty? 
 	end
 
 	def new
 		@snippet = Snippet.new	
+		session[:return_to] = request.referer
 	end
 
 	def create
 		snippet = @user.snippets.new(snippet_params)
 		snippet.group_id = @group.id
-
+		picture = params[:snippet][:picture]
 		if snippet.save
-			snippet.image.create(picture: params[:snippet][:picture])
-			redirect_to group_user_snippet_path(@group, @user, snippet)
+			snippet.image.create(picture: picture) unless !picture
+			redirect_to session.delete(:return_to)
 			# Send Notification
 			GroupMailer.group_snippet_notifications(snippet.group, snippet)
 		else
@@ -31,16 +33,17 @@ class SnippetsController < ApplicationController
 
 	def edit	
 		is_current_user?
+		session[:return_to] = request.referer
 	end
 
 	def update
 		@snippet.update_attributes(snippet_params)
-		redirect_to group_user_snippet_path(@group, @user, @snippet)
+		redirect_to session.delete(:return_to)
 	end
 
 	def destroy
 		@snippet.destroy
-		redirect_to group_user_snippets_path
+		redirect_to :back
 	end
 
 	def group_user_and_snippet_objects

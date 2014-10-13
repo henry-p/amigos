@@ -1,23 +1,34 @@
 <div id="timeline">
 <h2><%= @user.first_name%>  <%=@user.last_name%>'s snippets</h2>
 <% if current_user.id == @user.id %>
-	<button><%= link_to "Create New Snippet", new_group_user_snippet_path %></button>
+	<button><%= link_to "Snip", new_group_user_snippet_path %></button>
 <% end %>
 <% @user_snippets.each do |snippet| %>
-	<div class="snippet">
-		<h5><%= snippet.created_at.strftime("%B, %d, %Y") %></h5>
-			<% unless snippet.image.empty? %>	
-					<img src="<%= snippet.image.picture.url %>"> 
-			<% end %>
-			<p><%=snippet.content%></p>
-		<% unless snippet.comments.empty? %>
-			<% snippet.comments.each do |comment|	%>
-				<div class="comment">
-					<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
-					<p><%= comment.content %></p>
-				</div>
-			<% end %>
-		<% end %> 
-	</div>
+	<%= link_to [snippet.group, snippet.creator, snippet] do %>
+		<div class="snippet">
+			<h5><%= snippet.created_at.strftime("%B, %d, %Y") %></h5>
+				<% unless snippet.image.empty? %>	
+						<img src="<%= snippet.image.first.picture.url %>"> 
+				<% end %>
+				<p><%=snippet.content%></p>
+			<% unless snippet.comments.empty? %>
+				<% snippet.comments.each do |comment|	%>
+					<div class="comment">
+						<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
+						<p><%= comment.content %></p>
+						<% if current_user == comment.creator %>
+							<%= link_to "Edit", edit_group_user_snippet_comment_path(snippet.group, snippet.creator, snippet, comment) %>
+							<%= link_to "Delete", [snippet.group, snippet.creator, snippet, comment], method: :delete %>
+						<% end %>
+					</div>
+				<% end %>
+			<% end %> 
+			<button><%= link_to "Comment", new_group_user_snippet_comment_path(snippet.group, snippet.creator, snippet)%></button>
+<% if current_user.id == snippet.creator_id %>
+	<button><%= link_to "Edit", edit_group_user_snippet_path(snippet.group, snippet.creator, snippet)%></button>
+	<button><%= link_to "Delete", [snippet.group, snippet.creator, snippet], method: :delete %></button>
+<% end %>
+		</div>
+	<% end %>
 <% end %>
 </div>

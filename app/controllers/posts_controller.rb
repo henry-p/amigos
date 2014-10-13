@@ -7,22 +7,23 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		# @post = Group.find(params[:group_id]).members.find(params[:user_id]).posts.find(params[:id])
+		@post = Group.find(params[:group_id]).members.find(params[:user_id]).posts.find(params[:id])
 		@images = @post.images if !@post.images.empty?
 		@comments = @post.comments.order('updated_at DESC') if !@post.comments.empty?
 	end
 
 	def new
 		@post = Post.new	
+		session[:return_to] = request.referer
 	end
 
 	def create
 		post = @user.posts.new(post_params)
 		post.group_id = @group.id
-		
+		pictures = params[:post][:picture]
 		if post.save
-			post.images.create(picture: params[:post][:picture])
-			redirect_to group_user_post_path(@group, @user, post)
+			pictures.each {|pic| post.images.create(picture: pic)} unless !pictures
+			redirect_to session.delete(:return_to)
 			# Send Notification
 			GroupMailer.group_post_notifications(post.group, post)
 		else
@@ -31,27 +32,28 @@ class PostsController < ApplicationController
 	end
 
 	def edit	
+		session[:return_to] = request.referer
 		is_current_user?
 	end
 
 	def update
 		@post.update_attributes(post_params)
-		redirect_to group_user_post_path(@group, @user, @post)
+		redirect_to session.delete(:return_to)
 	end
 
 	def destroy
 		@post.destroy
-		redirect_to group_user_posts_path
+		redirect_to :back
 	end
 
 	def group_user_and_post_objects
-		@post = Post.find(params[:id]) if %w[show edit update destroy].include?(params[:action])
+		@post = Post.find(params[:id]) if %w[edit update destroy].include?(params[:action])
 		@group = Group.find(params[:group_id])
 		@user = User.find(params[:user_id])
 	end
 
 	def is_current_user?
-		redirect_to group_user_posts_path unless current_user.id == @user.id
+		redirect_to redirect_to session.delete(:return_to) unless current_user.id == @user.id
 	end
 
 	def login_required
