@@ -1,7 +1,12 @@
-<%= form_for [@group, @user, @snippet] do |f| %>
-	<p>
-		<%= f.label :content %>
-		<%= f.text_area :content %>
-	</p>
-	<%= f.submit %>
-<% end %>
+<div id="timeline">
+	<%= form_for [@group, @user, @snippet] do |f| %>
+		<p>
+		  <%= f.file_field :picture %>
+	  </p>
+		<p>
+			<%= f.label :content %>
+			<%= f.text_area :content %>
+		</p>
+		<%= f.submit %>
+	<% end %>
+</div>

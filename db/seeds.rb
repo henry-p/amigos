@@ -41,7 +41,7 @@ Membership.create(member_id: 2, group_id: 1)
 Membership.create(member_id: 3, group_id: 1)
 Membership.create(member_id: 4, group_id: 1)
 
-Post.create(group_id: 1, creator_id: 3, title: "On Putting Dogs to Sleep", content: "Why should know you're doing whatever,
+Post.create(group_id: 1, creator_id: 4, title: "On Putting Dogs to Sleep", content: "Why should know you're doing whatever,
 That you I did before,
 And the world small world,
 Your games you're happy wherever you more than that means.
@@ -56,6 +56,18 @@ You know what we were,
 The words in the line in time.
 You know what we were,
 The words in the line in time.")
+
+Post.create(group_id: 1, creator_id: 2, title: "Courage", content: "The courage I need
+I need the courage to control my instincts
+The courage I need to face my fears
+I need the courage to see the future
+The courage I need to compare facts and opinion 
+I need the courage to think right
+The courage I need to see if my friends trust me
+I need the courage to ask questions
+The courage I need to survive
+I need the courage to convince myself to do something
+I have to prepare myself for any thing that comes up! ")
 
 Snippet.create(content: "Cause im already in mine / Ain't about my heart is everything is done / I believe in the credits / It's the 7 things flowing up.", creator_id: 1, group_id: 1)
 
@@ -79,6 +91,6 @@ This kicking and yes dear we're gonna,
 
 Comment.create(content: "Wow Torey you're really good at poetry", creator_id: 2, commentable_id: 1, commentable_type: "Post")
 Comment.create(content: "This vacation is doing you some good!", creator_id: 1, commentable_id: 1, commentable_type: "Post")
-Comment.create(content: "lol", creator_id: 3, commentable_id: 1, commentable_type: "Snippet")
+Comment.create(content: "lol", creator_id: 1, commentable_id: 1, commentable_type: "Snippet")
 Comment.create(content: "Wait is this a Miley song?", creator_id: 4, commentable_id: 2, commentable_type: "Post")
 

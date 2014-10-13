@@ -1,32 +1,29 @@
 class SnippetsController < ApplicationController
+	before_action :login_required
+	before_action :group_user_and_snippet_objects
+
 	def index
-		@group = Group.find(params[:group_id])
-		@user = User.find(params[:user_id])
 		@user_snippets = @user.snippets.order('updated_at DESC')
-		@snippets = Snippet.all.order('updated_at DESC')
 	end
 
 	def show
-		@snippet = Snippet.find(params[:id])
-		@image = @snippet.images if @snippet.images != []
-		@comments = @snippet.comments.order('updated_at DESC') if @snippet.comments != [] 
+		@snippet = @group.members.find(@user.id).snippets.find(@snippet.id)
+		@image = @snippet.image if @snippet.image
+		@comments = @snippet.comments.order('updated_at DESC') if !@snippet.comments.empty? 
 	end
 
 	def new
-		@group = Group.find(params[:group_id])
-		@user = User.find(params[:user_id])
 		@snippet = Snippet.new	
+		session[:return_to] = request.referer
 	end
 
-
 	def create
-		user = User.find(params[:user_id])
-		snippet = user.snippets.new(snippet_params)
-		snippet.group_id = params[:group_id]
-
+		snippet = @user.snippets.new(snippet_params)
+		snippet.group_id = @group.id
+		picture = params[:snippet][:picture]
 		if snippet.save
-			redirect_to group_user_snippet_path(params[:group_id],params[:user_id], snippet.id)
-
+			snippet.image = Image.create(picture: picture) unless !picture
+			redirect_to session.delete(:return_to)
 			# Send Notification
 			GroupMailer.group_snippet_notifications(snippet.group, snippet)
 		else
@@ -35,23 +32,41 @@ class SnippetsController < ApplicationController
 	end
 
 	def edit	
-		@group = Group.find(params[:group_id])
-		@snippet = Snippet.find(params[:id])
-		@user = User.find(params[:user_id])
+		is_current_user?
+		session[:return_to] = request.referer
 	end
 
 	def update
-		snippet = Snippet.find(params[:id])
-		snippet.update_attributes(snippet_params)
-		redirect_to group_user_snippet_path(params[:group_id],params[:user_id], snippet.id)
+
+		if params[:snippet][:picture]
+			image = Image.new(picture: params[:snippet][:picture])
+			@snippet.image = image
+		end
+		@snippet.update_attributes(snippet_params)
+		redirect_to session.delete(:return_to)
 	end
 
 	def destroy
-		Snippet.destroy(params[:id])
-		redirect_to group_user_snippets
+		@snippet.destroy
+		redirect_to :back
 	end
 
-	def snippet_params
-		params.require(:snippet).permit(:content)
+	def group_user_and_snippet_objects
+		@snippet = Snippet.find(params[:id]) unless %w[index new create].include?(params[:action])
+		@group = Group.find(params[:group_id])
+		@user = User.find(params[:user_id])
 	end
+
+	def is_current_user?
+		redirect_to group_user_snippets_path unless current_user.id == @user.id
+	end
+
+	def login_required
+	  redirect_to new_user_session_path unless current_user
+	end
+	
+	private 
+		def snippet_params
+			params.require(:snippet).permit(:content)
+		end
 end

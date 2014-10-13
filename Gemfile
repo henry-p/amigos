@@ -30,6 +30,9 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 
+# gem "mini_magick"
+# gem 'rmagick'
+
 gem 'orm_adapter'
 
 gem 'carrierwave'

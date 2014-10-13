@@ -2,7 +2,9 @@
 
 <div class="profile">
 <br>
-	<img id="profile_img" src="<%= @user.image.picture if @user.image%>"> <br>
+<% if @image %>
+	<img id="profile_img" src="<%= @image.picture %>"> <br>
+<% end %>
 <h2><%= @user.first_name %> <%= @user.last_name %></h2>	
 <ul class="profile_stats">
 	<li><%= @user.email %></li>

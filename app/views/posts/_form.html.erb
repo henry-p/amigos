@@ -1,5 +1,7 @@
-<%= form_for [@group, @user, @post] do |f| %>
-  <%= f.file_field :picture %>
+<%= form_for [@group, @user, @post], :html => { :multipart => true } do |f| %>
+  <p>
+	  <%= f.file_field :picture, :multiple => true %>
+  </p>
   <p>
 		<%= f.label :title %>
 		<%= f.text_field :title %>

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@image = @user.image if @user.image
 	end
 
 	def edit
