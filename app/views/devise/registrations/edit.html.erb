@@ -1,0 +1,25 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div id="email_pw_edit"><%= f.label :email %><%= f.email_field :email %>
+  <br>
+  
+  <%= f.label :current_password %><%= f.password_field :current_password, autocomplete: "off" %>
+  <br>
+  
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+  <% end %>
+
+  <%= f.label :new_password %><%= f.password_field :password, autocomplete: "off" %>
+  <br>
+  
+  <%= f.label :confirm_new_password %><%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <br>
+  <br>
+  <%= f.submit "Update Profile" %>
+  <!-- <h3>Cancel My Account</h3> -->
+<% end %>
+
+  <p><%= button_to "Cancel Account", registration_path(resource_name), data: { confirm: "Are you sure? Cancelling your account is not reversible!" }, method: :delete %></p>
+</div>

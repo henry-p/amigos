@@ -1,1 +1,31 @@
-show.html.erb
+<div id="timeline">
+	<h2><%=@snippet.creator.first_name%>  <%=@snippet.creator.last_name%> - <%= @snippet.created_at.strftime("%B %d, %Y") %></h2>
+	<div class="snippet">
+		<% if @image %>
+			<img src="<%= @image.picture %>">
+		<% end %>
+		<p> <%= @snippet.content %></p>
+		<% if @comments %>
+			<% @comments.each do |comment| %>
+				<div class="comment">
+					<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
+					<%= comment.content %>
+					<% if current_user.id == comment.creator_id %>
+						<%= link_to "Edit", edit_group_user_snippet_comment_path(@snippet.group, @snippet.creator, @snippet, comment) %>
+						<%= link_to "Delete", [@snippet.group, @snippet.creator, @snippet, comment], method: :delete %>
+					<% end %>
+				</div>
+			<% end %>
+		<% end %>
+		<br>
+		<div class="editing">
+			<button><%= link_to "Comment", new_group_user_snippet_comment_path(@snippet.group, @snippet.creator, @snippet)%></button>
+			<% if current_user.id == @snippet.creator_id %>
+				<button><%= link_to "Edit", edit_group_user_snippet_path%></button>
+				<button><%= link_to "Delete", [@snippet.group, @snippet.creator, @snippet], method: :delete %></button>
+			<% end %>
+		</div>
+	</div>
+	<%= link_to "More snippets from this user", group_user_snippets_path %>
+	<%= link_to "Back to group", "/groups/#{@snippet.group_id}" %>
+</div>

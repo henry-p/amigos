@@ -1,13 +1,15 @@
+<%= link_to [@group, snippet.creator, snippet] do %>
 <div class="snippet">
 <h3>Snippet</h3>
-<h5><%=User.find_by_id(snippet.creator_id).first_name%>  <%=User.find_by_id(snippet.creator_id).last_name%> - <%= snippet.created_at.strftime("%B, %d, %Y") %></h5>
+<h5><%=User.find_by_id(snippet.creator_id).first_name%>  <%=User.find_by_id(snippet.creator_id).last_name%> - <%= snippet.created_at.strftime("%B %d, %Y") %></h5>
 <p><%=snippet.content%></p>
 <% unless snippet.comments.empty? %>
 <% snippet.comments.each do |comment|	%>
 <div class="comment">
-	<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
+	<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B %d, %Y") %></h5>
 	<p><%= comment.content %></p>
 </div>
 <% end %>
 <% end %> 
 </div>
+<% end %>
