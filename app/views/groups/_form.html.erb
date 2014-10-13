@@ -1,9 +1,5 @@
 <%= form_for @group do |f| %>
-<h2>New Group</h2>
-<%=   f.text_field :name, placeholder: "Group Name" %>
+<%=   f.text_field :name %>
 <%=   f.hidden_field 'jefe_id', :value => current_user.id %>
-<br>
-<br>
 <%=   f.submit %>
-<p>When creating a new group you will be automatically assigned as the <strong><a href="http://en.wiktionary.org/wiki/jefe" target="blank">Jefe</a></strong>.</p>
 <% end %>

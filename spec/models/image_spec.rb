@@ -2,14 +2,7 @@ require 'spec_helper'
 
 describe Image do
   it "should belong_to a user" do
-    user = User.new
-      user.email = "isaac@gmail.com"
-      user.password = "12345678"
-      user.password_confirmation = "12345678"
-      user.first_name = "Isaac"
-      user.last_name = "Node.js"
-      user.current_location = "Chicago, IL"
-      user.save!
+    user = User.create!
     image = Image.create!
     user.image = image
     expect(user.image.id).to eq image.id

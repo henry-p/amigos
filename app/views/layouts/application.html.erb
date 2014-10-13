@@ -8,25 +8,23 @@
   </head>
   <body>
     <header>
-      <div id="header_text"><%= link_to 'Friendzone', root_path %></div>
+      <div id="header_text">Friendzone</div>
       <nav>
-        <% if user_signed_in? %>
+        <% if logged_in? %>
         <button>
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <a href="">Sign Out</a>
         </button>
         <% else %>
         <button>
-        <%= link_to 'Sign Up', new_user_registration_path %>
+        <a href="">Sign Up</a>
         </button>
         <button>
-        <%= link_to 'Sign In', new_user_session_path %>
+        <a href="">Sign In</a>
         </button>
         <% end %>
       </nav>
     </header>
     <div id="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>
