@@ -9,6 +9,16 @@
   <body>
     <header>
       <div id="header_text"><%= link_to 'Friendzone', root_path %></div>
+
+      <% if user_signed_in? %>
+        <% if current_page?(controller: 'groups', action: 'show') %>
+          <%= form_for User.new, url: new_user_invitation_path, method: :get do |f| %>
+            <%= f.text_field :email %>
+            <%= f.submit "Invite!" %>
+          <% end %>
+        <% end %>
+      <% end %>
+
       <nav>
         <% if user_signed_in? %>
         <button>

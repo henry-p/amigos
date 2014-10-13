@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => {sessions: 'sessions'}
+  devise_for :users, :controllers => {sessions: 'sessions', invitations: "invitations"}
   root to: 'home#index'
 
   concern :commentable do
