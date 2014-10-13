@@ -7,8 +7,8 @@
 	<%= link_to [snippet.group, snippet.creator, snippet] do %>
 		<div class="snippet">
 			<h5><%= snippet.created_at.strftime("%B, %d, %Y") %></h5>
-				<% unless snippet.image.empty? %>	
-						<img src="<%= snippet.image.first.picture.url %>"> 
+				<% if snippet.image %>	
+						<img src="<%= snippet.image.picture %>"> 
 				<% end %>
 				<p><%=snippet.content%></p>
 			<% unless snippet.comments.empty? %>
@@ -17,17 +17,22 @@
 						<h5><%=User.find_by_id(comment.creator_id).first_name%>  <%=User.find_by_id(comment.creator_id).last_name%> - <%= comment.created_at.strftime("%B, %d, %Y") %></h5>
 						<p><%= comment.content %></p>
 						<% if current_user == comment.creator %>
-							<%= link_to "Edit", edit_group_user_snippet_comment_path(snippet.group, snippet.creator, snippet, comment) %>
-							<%= link_to "Delete", [snippet.group, snippet.creator, snippet, comment], method: :delete %>
+								<div class='commentEditing'>
+									<%= link_to "Edit", edit_group_user_snippet_comment_path(snippet.group, snippet.creator, snippet, comment) %>
+									<%= link_to "Delete", [snippet.group, snippet.creator, snippet, comment], method: :delete %>
+								</div>
 						<% end %>
 					</div>
 				<% end %>
 			<% end %> 
-			<button><%= link_to "Comment", new_group_user_snippet_comment_path(snippet.group, snippet.creator, snippet)%></button>
-<% if current_user.id == snippet.creator_id %>
-	<button><%= link_to "Edit", edit_group_user_snippet_path(snippet.group, snippet.creator, snippet)%></button>
-	<button><%= link_to "Delete", [snippet.group, snippet.creator, snippet], method: :delete %></button>
-<% end %>
+			<br>
+			<div class="editing">
+				<button><%= link_to "Comment", new_group_user_snippet_comment_path(snippet.group, snippet.creator, snippet)%></button>
+				<% if current_user.id == snippet.creator_id %>
+					<button><%= link_to "Edit", edit_group_user_snippet_path(snippet.group, snippet.creator, snippet)%></button>
+					<button><%= link_to "Delete", [snippet.group, snippet.creator, snippet], method: :delete %></button>
+				<% end %>
+			</div>
 		</div>
 	<% end %>
 <% end %>
