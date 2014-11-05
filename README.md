@@ -1,2 +1,2 @@
-amigos
+Friendzone
 ======
